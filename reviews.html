@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews & Awards | Luxury and Blush</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--serif:'Cormorant Garamond',Georgia,serif;
+--sans:'Montserrat',sans-serif;
+--cream:#FAF8F5;
+--warm:#F3EDE7;
+--blush:#E8DDD3;
+--dark:#1a1a1a;
+--text:#2c2c2c;
+--muted:#7a7a7a;
+--gold:#b8986e;
+--gold-light:#d4bc96;
+--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-x:hidden}
+::selection{background:var(--blush);color:var(--dark)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(0,0,0,0.05)}
+.nav-logo{font-family:var(--serif);font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500}
+.nav-links a:hover{color:var(--dark)}
+.nav-links a.active{color:var(--dark)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.menu-toggle span{width:24px;height:1.5px;background:var(--dark);transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:28px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:28px;color:var(--dark);text-decoration:none;font-weight:300}
+
+/* PAGE HEADER */
+.page-header{padding:160px 60px 80px;text-align:center}
+.page-tag{font-family:var(--sans);font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500}
+.page-title{font-family:var(--serif);font-size:clamp(36px,6vw,64px);font-weight:300;line-height:1.1;color:var(--dark);font-style:italic}
+
+/* AWARDS */
+.awards-section{padding:0 60px 100px;text-align:center}
+.awards-grid{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;margin-top:40px}
+.award-item{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:180px}
+.award-icon{width:80px;height:80px;border:1px solid var(--blush);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:11px;color:var(--gold);text-align:center;padding:10px}
+.award-name{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:500}
+.award-year{font-family:var(--serif);font-size:13px;color:var(--gold);font-style:italic}
+
+/* DIVIDER */
+.divider{width:60px;height:1px;background:var(--gold);margin:0 auto 80px}
+
+/* REVIEWS */
+.reviews-section{padding:0 60px 120px}
+.reviews-grid{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:60px}
+.review-card{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start}
+.review-mark{font-family:var(--serif);font-size:120px;line-height:0.8;color:var(--blush);font-weight:300;user-select:none;margin-top:-10px}
+.review-body{padding-top:10px}
+.review-text{font-family:var(--serif);font-size:20px;line-height:1.6;color:var(--text);font-weight:300;font-style:italic;margin-bottom:20px}
+.review-author{font-family:var(--sans);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:500}
+.review-detail{font-family:var(--sans);font-size:11px;color:var(--muted);margin-top:4px;font-weight:300}
+.review-stars{margin-bottom:12px;color:var(--gold);font-size:14px;letter-spacing:4px}
+
+/* CTA */
+.cta-section{background:var(--dark);padding:100px 60px;text-align:center}
+.cta-title{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:300;color:var(--cream);font-style:italic;margin-bottom:30px}
+.btn{display:inline-block;font-family:var(--sans);font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:16px 44px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;transition:all 0.4s;font-weight:500}
+.btn:hover{background:var(--gold);color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:40px 60px;text-align:center;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-copy{font-family:var(--sans);font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:1px}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.7s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+
+@media(max-width:900px){
+nav{padding:16px 24px}
+.nav-links{display:none}
+.menu-toggle{display:flex}
+.page-header{padding:120px 24px 60px}
+.awards-section{padding:0 24px 80px}
+.reviews-section{padding:0 24px 80px}
+.review-card{grid-template-columns:1fr}
+.review-mark{font-size:80px;line-height:0.6}
+.cta-section{padding:80px 24px}
+.awards-grid{gap:30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html" class="nav-logo">Luxury & Blush</a>
+<div class="nav-links">
+<a href="index.html#hello">Hello</a>
+<a href="index.html#concept">The Concept</a>
+<a href="index.html#strategist">The Strategist</a>
+<a href="index.html#sets">Epic Sets</a>
+<a href="index.html#scenery">Scenery</a>
+<a href="index.html#casting">The Casting</a>
+<a href="index.html#archive">The Archive</a>
+<a href="reviews.html" class="active">Reviews</a>
+</div>
+<div class="menu-toggle" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html#hello" onclick="toggleMenu()">Hello</a>
+<a href="index.html#concept" onclick="toggleMenu()">The Concept</a>
+<a href="index.html#sets" onclick="toggleMenu()">Epic Sets</a>
+<a href="index.html#casting" onclick="toggleMenu()">The Casting</a>
+<a href="reviews.html" onclick="toggleMenu()">Reviews</a>
+</div>
+
+<!-- HEADER -->
+<div class="page-header">
+<div class="page-tag reveal">Recognition</div>
+<h1 class="page-title reveal reveal-delay-1">Reviews & <span style="font-style:normal;font-weight:500">Awards</span></h1>
+</div>
+
+<!-- AWARDS -->
+<div class="awards-section">
+<div class="awards-grid">
+<div class="award-item reveal">
+<div class="award-icon">Style Me Pretty</div>
+<div class="award-name">Featured Planner</div>
+<div class="award-year">2024 — 2026</div>
+</div>
+<div class="award-item reveal reveal-delay-1">
+<div class="award-icon">WedVibes Media</div>
+<div class="award-name">Partner Studio</div>
+<div class="award-year">2025</div>
+</div>
+<div class="award-item reveal reveal-delay-2">
+<div class="award-icon">Award Placeholder</div>
+<div class="award-name">Award Name Here</div>
+<div class="award-year">Year</div>
+</div>
+<div class="award-item reveal reveal-delay-3">
+<div class="award-icon">Award Placeholder</div>
+<div class="award-name">Award Name Here</div>
+<div class="award-year">Year</div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- REVIEWS -->
+<div class="reviews-section">
+<div class="reviews-grid">
+
+<div class="review-card reveal">
+<div class="review-mark">"</div>
+<div class="review-body">
+<div class="review-stars">★ ★ ★ ★ ★</div>
+<p class="review-text">
+Thelma turned our dream into something even more magical than we imagined. Every single detail was thought through with such care and creativity. Our guests are still talking about it months later.
+</p>
+<div class="review-author">Client Name</div>
+<div class="review-detail">Destination Wedding — Puerto Vallarta, 2025</div>
+</div>
+</div>
+
+<div class="review-card reveal">
+<div class="review-mark">"</div>
+<div class="review-body">
+<div class="review-stars">★ ★ ★ ★ ★</div>
+<p class="review-text">
+We came from abroad not knowing anything about planning a wedding in Mexico. Luxury and Blush made the entire process feel effortless. The result was breathtaking — editorial, elegant, and deeply personal.
+</p>
+<div class="review-author">Client Name</div>
+<div class="review-detail">Destination Wedding — Tulum, 2024</div>
+</div>
+</div>
+
+<div class="review-card reveal">
+<div class="review-mark">"</div>
+<div class="review-body">
+<div class="review-stars">★ ★ ★ ★ ★</div>
+<p class="review-text">
+The floral installations alone were worth everything. But beyond the aesthetics, Thelma truly understood us as a couple. The whole experience felt like a film — we were the protagonists of our own story.
+</p>
+<div class="review-author">Client Name</div>
+<div class="review-detail">Destination Wedding — Cancún, 2024</div>
+</div>
+</div>
+
+<div class="review-card reveal">
+<div class="review-mark">"</div>
+<div class="review-body">
+<div class="review-stars">★ ★ ★ ★ ★</div>
+<p class="review-text">
+Planning from the United States felt seamless. Thelma's team handled everything — logistics, vendors, design — with impeccable taste and professionalism. We just showed up and lived the moment.
+</p>
+<div class="review-author">Client Name</div>
+<div class="review-detail">Destination Wedding — Chapala, 2025</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+<div class="cta-title reveal">Ready to begin <em>your story?</em></div>
+<a href="index.html#casting" class="btn reveal reveal-delay-1">Apply for your Casting</a>
+</div>
+
+<footer>
+<div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const observer=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'})
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
+</script>
+</body>
+</html>

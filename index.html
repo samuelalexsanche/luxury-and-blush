@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury and Blush | Luxury Destination Weddings in Mexico</title>
+<meta name="description" content="Luxury destination wedding planner in Mexico. Editorial design, floral artistry, and intimate storytelling for iconic love stories in Tulum, Cancún, Puerto Vallarta, and Jalisco.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--serif:'Cormorant Garamond',Georgia,serif;
+--sans:'Montserrat',sans-serif;
+--cream:#FAF8F5;
+--warm:#F3EDE7;
+--blush:#E8DDD3;
+--dark:#1a1a1a;
+--text:#2c2c2c;
+--muted:#7a7a7a;
+--gold:#b8986e;
+--gold-light:#d4bc96;
+--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-x:hidden}
+::selection{background:var(--blush);color:var(--dark)}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all 0.5s}
+nav.scrolled{background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.04);padding:16px 60px}
+.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a:hover{color:var(--dark)}
+.menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;z-index:101;padding:8px}
+.menu-toggle span{width:22px;height:1px;background:var(--dark);transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--serif);font-size:32px;color:var(--dark);text-decoration:none;font-weight:300;letter-spacing:1px}
+
+/* HERO */
+.hero{height:100vh;position:relative;overflow:hidden}
+.hero-img{position:absolute;inset:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,26,0.5) 0%,rgba(26,26,26,0.15) 40%,rgba(26,26,26,0.05) 100%)}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 60px 80px;z-index:2}
+.hero-tag{font-family:var(--sans);font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold-light);margin-bottom:24px;font-weight:500}
+.hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,84px);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:20px}
+.hero h1 em{font-style:italic;font-weight:300}
+.hero-sub{font-family:var(--sans);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:40px;font-weight:400}
+.btn{display:inline-block;font-family:var(--sans);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:16px 40px;border:1px solid rgba(255,255,255,0.5);color:var(--white);text-decoration:none;transition:all 0.4s;font-weight:500}
+.btn:hover{background:var(--white);color:var(--dark)}
+.btn-gold{border-color:var(--gold);color:var(--gold)}
+.btn-gold:hover{background:var(--gold);color:var(--white)}
+.btn-dark{border-color:var(--dark);color:var(--dark)}
+.btn-dark:hover{background:var(--dark);color:var(--cream)}
+
+/* SECTIONS */
+section{padding:140px 80px}
+.section-tag{font-family:var(--sans);font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:500}
+.section-title{font-family:var(--serif);font-size:clamp(34px,5vw,58px);font-weight:300;line-height:1.12;color:var(--dark);margin-bottom:28px}
+.section-title em{font-style:italic}
+.section-text{font-family:var(--sans);font-size:13px;line-height:2;color:var(--muted);max-width:580px;font-weight:300;letter-spacing:0.2px}
+
+/* HELLO */
+#hello{background:var(--cream);display:grid;grid-template-columns:1fr 1.1fr;gap:100px;align-items:center}
+.hello-img{width:100%;aspect-ratio:3/4;overflow:hidden}
+
+/* CONCEPT */
+#concept{background:var(--dark);text-align:center;display:flex;flex-direction:column;align-items:center;padding:140px 80px}
+#concept .section-tag{color:var(--gold-light)}
+#concept .section-title{color:var(--cream)}
+#concept .section-text{color:rgba(255,255,255,0.45);max-width:640px}
+.concept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;width:100%;max-width:800px}
+.concept-item{text-align:center;padding:40px 20px;border-right:1px solid rgba(255,255,255,0.06)}
+.concept-item:last-child{border-right:none}
+.concept-number{font-family:var(--serif);font-size:52px;font-weight:300;color:var(--gold);margin-bottom:8px}
+.concept-label{font-family:var(--sans);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:400}
+
+/* STRATEGIST */
+#strategist{background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.strategist-quote{font-family:var(--serif);font-size:clamp(22px,3vw,36px);font-weight:300;line-height:1.4;color:var(--dark);font-style:italic;padding-left:36px;border-left:2px solid var(--gold)}
+
+/* DESTINATIONS */
+#sets{background:var(--cream);text-align:center}
+.destinations-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:60px;max-width:1100px;margin-left:auto;margin-right:auto}
+.dest-card{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:pointer}
+.dest-card img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.dest-card:hover img{transform:scale(1.04)}
+.dest-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,26,0.65) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;transition:all 0.4s}
+.dest-name{font-family:var(--serif);font-size:30px;color:var(--white);font-weight:400}
+.dest-region{font-family:var(--sans);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px}
+
+/* SCENERY */
+#scenery{background:var(--warm);text-align:center}
+.scenery-text{max-width:640px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:60px}
+.gallery-item{overflow:hidden}
+.gallery-item img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-item:nth-child(1){aspect-ratio:3/4}
+.gallery-item:nth-child(2){aspect-ratio:1}
+.gallery-item:nth-child(3){aspect-ratio:3/4}
+
+/* CASTING */
+#casting{background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
+#casting .section-tag{color:var(--gold-light)}
+#casting .section-title{color:var(--cream)}
+#casting .section-text{color:rgba(255,255,255,0.4)}
+.contact-form{display:flex;flex-direction:column;gap:22px;padding-top:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-family:var(--sans);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+.form-group input,.form-group select,.form-group textarea{background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.12);padding:14px 0;font-family:var(--sans);font-size:13px;color:var(--cream);outline:none;transition:border-color 0.3s;font-weight:300;letter-spacing:0.3px}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.2)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group select{cursor:pointer;appearance:none;-webkit-appearance:none}
+.form-group select option{background:var(--dark);color:var(--cream)}
+.form-group textarea{resize:none;height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.btn-submit{font-family:var(--sans);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:16px 40px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer;transition:all 0.4s;font-weight:500;margin-top:8px;align-self:flex-start}
+.btn-submit:hover{background:var(--gold);color:var(--white)}
+
+/* ARCHIVE */
+#archive{background:var(--cream);text-align:center}
+.archive-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:60px}
+.archive-item{overflow:hidden;aspect-ratio:1}
+.archive-item:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.archive-item img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.archive-item:hover img{transform:scale(1.04)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:60px 80px;text-align:center}
+.footer-logo{font-family:var(--serif);font-size:12px;letter-spacing:6px;text-transform:uppercase;color:var(--cream);margin-bottom:24px;font-weight:500}
+.footer-social{display:flex;justify-content:center;gap:28px;margin-bottom:28px}
+.footer-social a{font-family:var(--sans);font-size:8px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.3s}
+.footer-social a:hover{color:var(--gold)}
+.footer-badges{display:flex;justify-content:center;gap:32px;margin-bottom:32px}
+.footer-badge{font-family:var(--sans);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.25);padding:8px 18px;border:1px solid rgba(255,255,255,0.08)}
+.footer-copy{font-family:var(--sans);font-size:9px;color:rgba(255,255,255,0.2);letter-spacing:1px}
+
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.12s}
+.reveal-d2{transition-delay:0.24s}
+.reveal-d3{transition-delay:0.36s}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+nav{padding:16px 24px}
+nav.scrolled{padding:14px 24px}
+.nav-links{display:none}
+.menu-toggle{display:flex}
+section{padding:100px 24px}
+#hello{grid-template-columns:1fr;gap:50px}
+.hello-img{aspect-ratio:4/3}
+#strategist{grid-template-columns:1fr;gap:40px}
+.concept-grid{gap:0}
+.destinations-grid{grid-template-columns:1fr}
+.gallery-grid{grid-template-columns:1fr 1fr}
+.gallery-item:nth-child(n){aspect-ratio:1}
+#casting{grid-template-columns:1fr;gap:50px}
+.form-row{grid-template-columns:1fr}
+.archive-grid{grid-template-columns:repeat(2,1fr)}
+.archive-item:nth-child(1){grid-column:span 2;grid-row:span 1;aspect-ratio:16/9}
+.hero-content{padding:0 24px 50px}
+}
+@media(max-width:600px){
+.concept-grid{grid-template-columns:1fr}
+.concept-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:24px 20px}
+.gallery-grid{grid-template-columns:1fr}
+.archive-grid{grid-template-columns:1fr}
+.archive-item:nth-child(1){grid-column:span 1}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+<a href="#" class="nav-logo">Luxury & Blush</a>
+<div class="nav-links">
+<a href="#hello">Hello</a>
+<a href="#concept">The Concept</a>
+<a href="#strategist">The Strategist</a>
+<a href="#sets">Epic Sets</a>
+<a href="#scenery">Scenery</a>
+<a href="#casting">The Casting</a>
+<a href="#archive">The Archive</a>
+<a href="reviews.html">Reviews</a>
+</div>
+<div class="menu-toggle" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#hello" onclick="toggleMenu()">Hello</a>
+<a href="#concept" onclick="toggleMenu()">The Concept</a>
+<a href="#strategist" onclick="toggleMenu()">The Strategist</a>
+<a href="#sets" onclick="toggleMenu()">Epic Sets</a>
+<a href="#scenery" onclick="toggleMenu()">Scenery</a>
+<a href="#casting" onclick="toggleMenu()">The Casting</a>
+<a href="#archive" onclick="toggleMenu()">The Archive</a>
+<a href="reviews.html" onclick="toggleMenu()">Reviews</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-img"><img src="images/hero-couple.png" alt="Luxury destination wedding in Mexico"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-tag">Luxury Destination Weddings in Mexico</div>
+<h1>Directing <em>iconic<br>love stories</em></h1>
+<p class="hero-sub">Editorial · Mystical · Deeply Real</p>
+<a href="#casting" class="btn">Apply for your Casting</a>
+</div>
+</section>
+
+<!-- HELLO -->
+<section id="hello">
+<div class="hello-img reveal">
+<img src="images/hello-bride.png" alt="Luxury and Blush bride on the beach">
+</div>
+<div>
+<div class="section-tag reveal">Hello</div>
+<div class="section-title reveal reveal-d1">A story meant<br>to be <em>told</em></div>
+<p class="section-text reveal reveal-d2">
+At Luxury and Blush Events, we don't plan weddings — we direct stories meant to be told.
+</p>
+<br>
+<p class="section-text reveal reveal-d2">
+Under Thelma's creative vision, we operate as a signature studio where editorial design, floral artistry, and a subtle connection to the unseen come together to create something truly uncommon.
+</p>
+<br>
+<p class="section-text reveal reveal-d3">
+We understand that every couple are the main characters of a living story. That's why our approach is intimate and intuitive: we design atmospheres that are not only seen, but deeply felt.
+</p>
+<br>
+<p class="section-text reveal reveal-d3" style="font-style:italic;color:var(--gold);font-family:var(--serif);font-size:18px;line-height:1.6">
+"We are not just planners; we are the directors of your most meaningful memory."
+</p>
+</div>
+</section>
+
+<!-- CONCEPT -->
+<section id="concept">
+<div class="section-tag reveal">The Concept</div>
+<div class="section-title reveal reveal-d1" style="color:var(--cream)">A mystical <em>signature</em></div>
+<p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.45);max-width:640px">
+We redefine the wedding cliché into an editorial masterpiece. We are Story Directors, curators of atmospheres where every detail is a frame and every moment is the Premiere of your life. We blend high-end design with the raw beauty of Mexico's most exclusive landscapes.
+</p>
+<div class="concept-grid">
+<div class="concept-item reveal">
+<div class="concept-number">19</div>
+<div class="concept-label">Years of Experience</div>
+</div>
+<div class="concept-item reveal reveal-d1">
+<div class="concept-number">12</div>
+<div class="concept-label">Specialized in Destinations</div>
+</div>
+<div class="concept-item reveal reveal-d2">
+<div class="concept-number">100%</div>
+<div class="concept-label">Tailor-Made</div>
+</div>
+</div>
+</section>
+
+<!-- STRATEGIST -->
+<section id="strategist">
+<div>
+<div class="section-tag reveal">The Strategist</div>
+<div class="section-title reveal reveal-d1">The blueprint:<br><em>19 years of<br>flawless execution</em></div>
+<p class="section-text reveal reveal-d2">
+Mastery is built over time. With nearly two decades in the industry and 12 years specialized in Destination Weddings, our logistics are invisible, allowing you to remain the Main Character.
+</p>
+<br>
+<p class="section-text reveal reveal-d2">
+From budget optimization to full-scale production, we take the lead so you can live the experience.
+</p>
+</div>
+<div class="reveal reveal-d2">
+<div class="strategist-quote">
+Every detail is a frame, every moment a scene — and you are always the lead.
+</div>
+</div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="sets">
+<div class="section-tag reveal">Epic Sets</div>
+<div class="section-title reveal reveal-d1">Directing iconic love stories in<br><em>Mexico's most stunning destinations</em></div>
+<div class="destinations-grid">
+<div class="dest-card reveal">
+<img src="images/dest-tulum.png" alt="Wedding ceremony in Tulum">
+<div class="dest-overlay">
+<div class="dest-name">Tulum</div>
+<div class="dest-region">Riviera Maya</div>
+</div>
+</div>
+<div class="dest-card reveal reveal-d1">
+<img src="images/dest-beach.png" alt="Beach wedding Cancun">
+<div class="dest-overlay">
+<div class="dest-name">Cancún</div>
+<div class="dest-region">Riviera Maya</div>
+</div>
+</div>
+<div class="dest-card reveal reveal-d2">
+<img src="images/dest-venue.png" alt="Wedding venue Puerto Vallarta">
+<div class="dest-overlay">
+<div class="dest-name">Puerto Vallarta</div>
+<div class="dest-region">Jalisco</div>
+</div>
+</div>
+<div class="dest-card reveal reveal-d3">
+<img src="images/dest-jalisco.png" alt="Wedding in agave fields Jalisco">
+<div class="dest-overlay">
+<div class="dest-name">Chapala & Ajijic</div>
+<div class="dest-region">Jalisco</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SCENERY -->
+<section id="scenery">
+<div class="section-tag reveal">Scenery & Botanical Art</div>
+<div class="section-title reveal reveal-d1">Curated <em>aesthetics</em></div>
+<p class="section-text scenery-text reveal reveal-d2" style="max-width:640px;margin:0 auto">
+Our Botanical Art is conceived as a living installation. We don't just decorate — we design the scenery that breathes life into your narrative. Texture, light, and floral architecture tailored to your essence.
+</p>
+<div class="gallery-grid">
+<div class="gallery-item reveal"><img src="images/scenery1.png" alt="Bride with colorful bouquet"></div>
+<div class="gallery-item reveal reveal-d1"><img src="images/scenery2.png" alt="Wedding accessories detail"></div>
+<div class="gallery-item reveal reveal-d2"><img src="images/scenery3.png" alt="Bride portrait with flowers"></div>
+</div>
+</section>
+
+<!-- CASTING -->
+<section id="casting">
+<div>
+<div class="section-tag reveal">The Casting</div>
+<div class="section-title reveal reveal-d1" style="color:var(--cream)">Begin your<br><em>production</em></div>
+<p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
+Our curatorial eye requires a deep connection with our couples. We only take a limited number of 'Premiere' weddings each year to ensure exclusivity.
+</p>
+<br>
+<p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
+Apply below and let us begin crafting your story.
+</p>
+</div>
+<div class="contact-form reveal reveal-d2">
+<div class="form-group">
+<label>Lead Protagonist</label>
+<input type="text" placeholder="Your name">
+</div>
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" placeholder="your@email.com">
+</div>
+<div class="form-row">
+<div class="form-group">
+<label>Choose Your Scene</label>
+<select>
+<option value="">Select destination</option>
+<option>Cancún</option>
+<option>Tulum</option>
+<option>Playa del Carmen</option>
+<option>Puerto Vallarta</option>
+<option>Chapala</option>
+<option>Ajijic</option>
+<option>Other</option>
+</select>
+</div>
+<div class="form-group">
+<label>Production Funds</label>
+<select>
+<option value="">Select budget</option>
+<option>$20 - 35K</option>
+<option>$35 - 50K</option>
+<option>$50K +</option>
+</select>
+</div>
+</div>
+<div class="form-group">
+<label>Tell Us Your Story</label>
+<textarea placeholder="Share your vision with us..."></textarea>
+</div>
+<button class="btn-submit">Send My Audition</button>
+</div>
+</section>
+
+<!-- ARCHIVE -->
+<section id="archive">
+<div class="section-tag reveal">The Archive</div>
+<div class="section-title reveal reveal-d1">Real stories. <em>Private commissions.</em></div>
+<div class="archive-grid">
+<div class="archive-item reveal"><img src="images/archive1.png" alt="Couple beach wedding black and white"></div>
+<div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Fun beach wedding photo"></div>
+<div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
+<div class="archive-item reveal reveal-d1"><img src="images/archive4.png" alt="Cultural wedding celebration"></div>
+<div class="archive-item reveal reveal-d2"><img src="images/hero-couple.png" alt="Elegant couple portrait"></div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-badges">
+<div class="footer-badge">Style Me Pretty</div>
+<div class="footer-badge">WedVibes Media</div>
+</div>
+<div class="footer-logo">Luxury & Blush</div>
+<div class="footer-social">
+<a href="https://www.instagram.com/luxury.and.blush" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/weddingplannerguadalajara/" target="_blank">Facebook</a>
+<a href="https://www.tiktok.com/@eventplannerdestination" target="_blank">TikTok</a>
+<a href="https://wa.me/523339686925" target="_blank">WhatsApp</a>
+</div>
+<div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)
+})
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+},{threshold:0.08,rootMargin:'0px 0px -30px 0px'})
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
+</script>
+</body>
+</html>
