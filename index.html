@@ -27,25 +27,48 @@ body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-
 ::selection{background:var(--blush);color:var(--dark)}
 img{display:block;width:100%;height:100%;object-fit:cover}
 
+/* LANG TOGGLE */
+body.lang-es [data-en]{display:none}
+body.lang-es [data-es]{display:inline}
+body:not(.lang-es) [data-es]{display:none}
+body:not(.lang-es) [data-en]{display:inline}
+[data-es],[data-en]{display:inline}
+.lang-switch{display:flex;align-items:center;gap:6px;font-family:var(--sans);font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.lang-btn{background:none;border:none;cursor:pointer;color:var(--muted);transition:color 0.3s;font-family:var(--sans);font-size:9px;letter-spacing:2px;text-transform:uppercase;font-weight:500;padding:0}
+.lang-btn.active{color:var(--dark)}
+.lang-btn:hover{color:var(--dark)}
+.lang-sep{color:var(--blush)}
+
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all 0.5s}
 nav.scrolled{background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.04);padding:16px 60px}
-.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
+.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:5px;text-transform:uppercase;color:var(--white);text-decoration:none;font-weight:500;transition:color 0.5s}
+nav.scrolled .nav-logo{color:var(--dark)}
 .nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-family:var(--sans);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
+.nav-links a{font-family:var(--sans);font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
+nav.scrolled .nav-links a{color:var(--muted)}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-links a:hover{color:var(--dark)}
+.nav-links a:hover{color:var(--white)}
+nav.scrolled .nav-links a:hover{color:var(--dark)}
+nav .lang-btn{color:rgba(255,255,255,0.6)}
+nav.scrolled .lang-btn{color:var(--muted)}
+nav .lang-btn.active{color:var(--white)}
+nav.scrolled .lang-btn.active{color:var(--dark)}
+nav .lang-sep{color:rgba(255,255,255,0.25)}
+nav.scrolled .lang-sep{color:var(--blush)}
 .menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;z-index:101;padding:8px}
-.menu-toggle span{width:22px;height:1px;background:var(--dark);transition:all 0.3s}
+.menu-toggle span{width:22px;height:1px;background:var(--white);transition:all 0.3s}
+nav.scrolled .menu-toggle span{background:var(--dark)}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:var(--serif);font-size:32px;color:var(--dark);text-decoration:none;font-weight:300;letter-spacing:1px}
+.mobile-lang{display:flex;gap:12px;margin-top:8px}
 
 /* HERO */
 .hero{height:100vh;position:relative;overflow:hidden}
 .hero-img{position:absolute;inset:0}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,26,0.5) 0%,rgba(26,26,26,0.15) 40%,rgba(26,26,26,0.05) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,26,0.55) 0%,rgba(26,26,26,0.2) 40%,rgba(26,26,26,0.1) 100%)}
 .hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 60px 80px;z-index:2}
 .hero-tag{font-family:var(--sans);font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold-light);margin-bottom:24px;font-weight:500}
 .hero h1{font-family:var(--serif);font-size:clamp(44px,7vw,84px);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:20px}
@@ -182,29 +205,39 @@ section{padding:100px 24px}
 <nav id="navbar">
 <a href="#" class="nav-logo">Luxury & Blush</a>
 <div class="nav-links">
-<a href="#hello">Hello</a>
-<a href="#concept">The Concept</a>
-<a href="#strategist">The Strategist</a>
-<a href="#sets">Epic Sets</a>
-<a href="#scenery">Scenery</a>
-<a href="#casting">The Casting</a>
-<a href="#archive">The Archive</a>
-<a href="reviews.html">Reviews</a>
+  <a href="#hello"><span data-en>Hello</span><span data-es>Hola</span></a>
+  <a href="#concept"><span data-en>The Concept</span><span data-es>El Concepto</span></a>
+  <a href="#strategist"><span data-en>The Strategist</span><span data-es>La Estratega</span></a>
+  <a href="#sets"><span data-en>Epic Sets</span><span data-es>Escenarios</span></a>
+  <a href="#scenery"><span data-en>Scenery</span><span data-es>Escenografía</span></a>
+  <a href="#casting"><span data-en>The Casting</span><span data-es>El Casting</span></a>
+  <a href="#archive"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
+  <a href="reviews.html"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
+  <div class="lang-switch">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
+  </div>
 </div>
 <div class="menu-toggle" onclick="toggleMenu()">
-<span></span><span></span><span></span>
+  <span></span><span></span><span></span>
 </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-<a href="#hello" onclick="toggleMenu()">Hello</a>
-<a href="#concept" onclick="toggleMenu()">The Concept</a>
-<a href="#strategist" onclick="toggleMenu()">The Strategist</a>
-<a href="#sets" onclick="toggleMenu()">Epic Sets</a>
-<a href="#scenery" onclick="toggleMenu()">Scenery</a>
-<a href="#casting" onclick="toggleMenu()">The Casting</a>
-<a href="#archive" onclick="toggleMenu()">The Archive</a>
-<a href="reviews.html" onclick="toggleMenu()">Reviews</a>
+  <a href="#hello" onclick="toggleMenu()"><span data-en>Hello</span><span data-es>Hola</span></a>
+  <a href="#concept" onclick="toggleMenu()"><span data-en>The Concept</span><span data-es>El Concepto</span></a>
+  <a href="#strategist" onclick="toggleMenu()"><span data-en>The Strategist</span><span data-es>La Estratega</span></a>
+  <a href="#sets" onclick="toggleMenu()"><span data-en>Epic Sets</span><span data-es>Escenarios</span></a>
+  <a href="#scenery" onclick="toggleMenu()"><span data-en>Scenery</span><span data-es>Escenografía</span></a>
+  <a href="#casting" onclick="toggleMenu()"><span data-en>The Casting</span><span data-es>El Casting</span></a>
+  <a href="#archive" onclick="toggleMenu()"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
+  <a href="reviews.html" onclick="toggleMenu()"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
+  <div class="mobile-lang">
+    <button class="lang-btn" id="mbtn-en" onclick="setLang('en');toggleMenu()">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" id="mbtn-es" onclick="setLang('es');toggleMenu()">ES</button>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -212,224 +245,320 @@ section{padding:100px 24px}
 <div class="hero-img"><img src="images/hero-couple.png" alt="Luxury destination wedding in Mexico"></div>
 <div class="hero-overlay"></div>
 <div class="hero-content">
-<div class="hero-tag">Luxury Destination Weddings in Mexico</div>
-<h1>Directing <em>iconic<br>love stories</em></h1>
-<p class="hero-sub">Editorial · Mystical · Deeply Real</p>
-<a href="#casting" class="btn">Apply for your Casting</a>
+  <div class="hero-tag">
+    <span data-en>Luxury Destination Weddings in Mexico</span>
+    <span data-es>Bodas de Destino de Lujo en México</span>
+  </div>
+  <h1>
+    <span data-en>Directing <em>iconic<br>love stories</em></span>
+    <span data-es>Dirigiendo <em>historias de<br>amor icónicas</em></span>
+  </h1>
+  <p class="hero-sub">
+    <span data-en>Editorial · Mystical · Deeply Real</span>
+    <span data-es>Editorial · Místico · Profundamente Real</span>
+  </p>
+  <a href="#casting" class="btn">
+    <span data-en>Apply for your Casting</span>
+    <span data-es>Aplica a tu Casting</span>
+  </a>
 </div>
 </section>
 
 <!-- HELLO -->
 <section id="hello">
 <div class="hello-img reveal">
-<img src="images/hello-bride.png" alt="Luxury and Blush bride on the beach">
+  <img src="images/hello-bride.png" alt="Luxury and Blush bride on the beach">
 </div>
 <div>
-<div class="section-tag reveal">Hello</div>
-<div class="section-title reveal reveal-d1">A story meant<br>to be <em>told</em></div>
-<p class="section-text reveal reveal-d2">
-At Luxury and Blush Events, we don't plan weddings — we direct stories meant to be told.
-</p>
-<br>
-<p class="section-text reveal reveal-d2">
-Under Thelma's creative vision, we operate as a signature studio where editorial design, floral artistry, and a subtle connection to the unseen come together to create something truly uncommon.
-</p>
-<br>
-<p class="section-text reveal reveal-d3">
-We understand that every couple are the main characters of a living story. That's why our approach is intimate and intuitive: we design atmospheres that are not only seen, but deeply felt.
-</p>
-<br>
-<p class="section-text reveal reveal-d3" style="font-style:italic;color:var(--gold);font-family:var(--serif);font-size:18px;line-height:1.6">
-"We are not just planners; we are the directors of your most meaningful memory."
-</p>
+  <div class="section-tag reveal">
+    <span data-en>Hello</span><span data-es>Hola</span>
+  </div>
+  <div class="section-title reveal reveal-d1">
+    <span data-en>A story meant<br>to be <em>told</em></span>
+    <span data-es>Una historia hecha<br>para ser <em>contada</em></span>
+  </div>
+  <p class="section-text reveal reveal-d2">
+    <span data-en>At Luxury and Blush Events, we don't plan weddings — we direct stories meant to be told.</span>
+    <span data-es>En Luxury and Blush Events, no planeamos bodas — dirigimos historias destinadas a ser contadas.</span>
+  </p>
+  <br>
+  <p class="section-text reveal reveal-d2">
+    <span data-en>Under Thelma's creative vision, we operate as a signature studio where editorial design, floral artistry, and a subtle connection to the unseen come together to create something truly uncommon.</span>
+    <span data-es>Bajo la visión creativa de Thelma, operamos como un estudio de firma donde el diseño editorial, el arte floral y una conexión sutil con lo invisible se unen para crear algo verdaderamente extraordinario.</span>
+  </p>
+  <br>
+  <p class="section-text reveal reveal-d3">
+    <span data-en>We understand that every couple are the main characters of a living story. That's why our approach is intimate and intuitive: we design atmospheres that are not only seen, but deeply felt.</span>
+    <span data-es>Entendemos que cada pareja es el personaje principal de una historia viva. Por eso nuestro enfoque es íntimo e intuitivo: diseñamos atmósferas que no solo se ven, sino que se sienten profundamente.</span>
+  </p>
+  <br>
+  <p class="section-text reveal reveal-d3" style="font-style:italic;color:var(--gold);font-family:var(--serif);font-size:18px;line-height:1.6">
+    <span data-en>"We are not just planners; we are the directors of your most meaningful memory."</span>
+    <span data-es>"No somos solo planificadoras; somos las directoras de tu recuerdo más significativo."</span>
+  </p>
 </div>
 </section>
 
 <!-- CONCEPT -->
 <section id="concept">
-<div class="section-tag reveal">The Concept</div>
-<div class="section-title reveal reveal-d1" style="color:var(--cream)">A mystical <em>signature</em></div>
+<div class="section-tag reveal">
+  <span data-en>The Concept</span><span data-es>El Concepto</span>
+</div>
+<div class="section-title reveal reveal-d1" style="color:var(--cream)">
+  <span data-en>A mystical <em>signature</em></span>
+  <span data-es>Una <em>firma</em> mística</span>
+</div>
 <p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.45);max-width:640px">
-We redefine the wedding cliché into an editorial masterpiece. We are Story Directors, curators of atmospheres where every detail is a frame and every moment is the Premiere of your life. We blend high-end design with the raw beauty of Mexico's most exclusive landscapes.
+  <span data-en>We redefine the wedding cliché into an editorial masterpiece. We are Story Directors, curators of atmospheres where every detail is a frame and every moment is the Premiere of your life. We blend high-end design with the raw beauty of Mexico's most exclusive landscapes.</span>
+  <span data-es>Redefinimos el cliché de la boda en una obra maestra editorial. Somos Directoras de Historias, curadoras de atmósferas donde cada detalle es un encuadre y cada momento es el Estreno de tu vida. Fusionamos el diseño de alto nivel con la belleza pura de los paisajes más exclusivos de México.</span>
 </p>
 <div class="concept-grid">
-<div class="concept-item reveal">
-<div class="concept-number">19</div>
-<div class="concept-label">Years of Experience</div>
-</div>
-<div class="concept-item reveal reveal-d1">
-<div class="concept-number">12</div>
-<div class="concept-label">Specialized in Destinations</div>
-</div>
-<div class="concept-item reveal reveal-d2">
-<div class="concept-number">100%</div>
-<div class="concept-label">Tailor-Made</div>
-</div>
+  <div class="concept-item reveal">
+    <div class="concept-number">19</div>
+    <div class="concept-label">
+      <span data-en>Years of Experience</span><span data-es>Años de Experiencia</span>
+    </div>
+  </div>
+  <div class="concept-item reveal reveal-d1">
+    <div class="concept-number">12</div>
+    <div class="concept-label">
+      <span data-en>Specialized in Destinations</span><span data-es>Especializada en Destinos</span>
+    </div>
+  </div>
+  <div class="concept-item reveal reveal-d2">
+    <div class="concept-number">100%</div>
+    <div class="concept-label">
+      <span data-en>Tailor-Made</span><span data-es>A la Medida</span>
+    </div>
+  </div>
 </div>
 </section>
 
 <!-- STRATEGIST -->
 <section id="strategist">
 <div>
-<div class="section-tag reveal">The Strategist</div>
-<div class="section-title reveal reveal-d1">The blueprint:<br><em>19 years of<br>flawless execution</em></div>
-<p class="section-text reveal reveal-d2">
-Mastery is built over time. With nearly two decades in the industry and 12 years specialized in Destination Weddings, our logistics are invisible, allowing you to remain the Main Character.
-</p>
-<br>
-<p class="section-text reveal reveal-d2">
-From budget optimization to full-scale production, we take the lead so you can live the experience.
-</p>
+  <div class="section-tag reveal">
+    <span data-en>The Strategist</span><span data-es>La Estratega</span>
+  </div>
+  <div class="section-title reveal reveal-d1">
+    <span data-en>The blueprint:<br><em>19 years of<br>flawless execution</em></span>
+    <span data-es>El plan maestro:<br><em>19 años de<br>ejecución impecable</em></span>
+  </div>
+  <p class="section-text reveal reveal-d2">
+    <span data-en>Mastery is built over time. With nearly two decades in the industry and 12 years specialized in Destination Weddings, our logistics are invisible, allowing you to remain the Main Character.</span>
+    <span data-es>La maestría se construye con el tiempo. Con casi dos décadas en la industria y 12 años especializadas en Bodas de Destino, nuestra logística es invisible para que tú sigas siendo el Personaje Principal.</span>
+  </p>
+  <br>
+  <p class="section-text reveal reveal-d2">
+    <span data-en>From budget optimization to full-scale production, we take the lead so you can live the experience.</span>
+    <span data-es>Desde la optimización del presupuesto hasta la producción a gran escala, tomamos las riendas para que tú puedas vivir la experiencia.</span>
+  </p>
 </div>
 <div class="reveal reveal-d2">
-<div class="strategist-quote">
-Every detail is a frame, every moment a scene — and you are always the lead.
-</div>
+  <div class="strategist-quote">
+    <span data-en>Every detail is a frame, every moment a scene — and you are always the lead.</span>
+    <span data-es>Cada detalle es un encuadre, cada momento una escena — y tú siempre eres el protagonista.</span>
+  </div>
 </div>
 </section>
 
 <!-- DESTINATIONS -->
 <section id="sets">
-<div class="section-tag reveal">Epic Sets</div>
-<div class="section-title reveal reveal-d1">Directing iconic love stories in<br><em>Mexico's most stunning destinations</em></div>
+<div class="section-tag reveal">
+  <span data-en>Epic Sets</span><span data-es>Escenarios Épicos</span>
+</div>
+<div class="section-title reveal reveal-d1">
+  <span data-en>Directing iconic love stories in<br><em>Mexico's most stunning destinations</em></span>
+  <span data-es>Dirigiendo historias de amor icónicas en<br><em>los destinos más impresionantes de México</em></span>
+</div>
 <div class="destinations-grid">
-<div class="dest-card reveal">
-<img src="images/dest-tulum.png" alt="Wedding ceremony in Tulum">
-<div class="dest-overlay">
-<div class="dest-name">Tulum</div>
-<div class="dest-region">Riviera Maya</div>
-</div>
-</div>
-<div class="dest-card reveal reveal-d1">
-<img src="images/dest-beach.png" alt="Beach wedding Cancun">
-<div class="dest-overlay">
-<div class="dest-name">Cancún</div>
-<div class="dest-region">Riviera Maya</div>
-</div>
-</div>
-<div class="dest-card reveal reveal-d2">
-<img src="images/dest-venue.png" alt="Wedding venue Puerto Vallarta">
-<div class="dest-overlay">
-<div class="dest-name">Puerto Vallarta</div>
-<div class="dest-region">Jalisco</div>
-</div>
-</div>
-<div class="dest-card reveal reveal-d3">
-<img src="images/dest-jalisco.png" alt="Wedding in agave fields Jalisco">
-<div class="dest-overlay">
-<div class="dest-name">Chapala & Ajijic</div>
-<div class="dest-region">Jalisco</div>
-</div>
-</div>
+  <div class="dest-card reveal">
+    <img src="images/dest-tulum.png" alt="Wedding ceremony in Tulum">
+    <div class="dest-overlay">
+      <div class="dest-name">Tulum</div>
+      <div class="dest-region">Riviera Maya</div>
+    </div>
+  </div>
+  <div class="dest-card reveal reveal-d1">
+    <img src="images/dest-venue.png" alt="Wedding Puerto Vallarta">
+    <div class="dest-overlay">
+      <div class="dest-name">Puerto Vallarta</div>
+      <div class="dest-region">Jalisco</div>
+    </div>
+  </div>
+  <div class="dest-card reveal reveal-d2">
+    <img src="images/dest-beach.png" alt="Beach wedding Cancun">
+    <div class="dest-overlay">
+      <div class="dest-name">Cancún</div>
+      <div class="dest-region">Riviera Maya</div>
+    </div>
+  </div>
+  <div class="dest-card reveal reveal-d3">
+    <img src="images/dest-jalisco.png" alt="Wedding in agave fields Jalisco">
+    <div class="dest-overlay">
+      <div class="dest-name">Chapala & Ajijic</div>
+      <div class="dest-region">Jalisco</div>
+    </div>
+  </div>
 </div>
 </section>
 
 <!-- SCENERY -->
 <section id="scenery">
-<div class="section-tag reveal">Scenery & Botanical Art</div>
-<div class="section-title reveal reveal-d1">Curated <em>aesthetics</em></div>
+<div class="section-tag reveal">
+  <span data-en>Scenery & Botanical Art</span><span data-es>Escenografía & Arte Botánico</span>
+</div>
+<div class="section-title reveal reveal-d1">
+  <span data-en>Curated <em>aesthetics</em></span>
+  <span data-es><em>Estética</em> curada</span>
+</div>
 <p class="section-text scenery-text reveal reveal-d2" style="max-width:640px;margin:0 auto">
-Our Botanical Art is conceived as a living installation. We don't just decorate — we design the scenery that breathes life into your narrative. Texture, light, and floral architecture tailored to your essence.
+  <span data-en>Our Botanical Art is conceived as a living installation. We don't just decorate — we design the scenery that breathes life into your narrative. Texture, light, and floral architecture tailored to your essence.</span>
+  <span data-es>Nuestro Arte Botánico se concibe como una instalación viva. No solo decoramos — diseñamos la escenografía que da vida a tu narrativa. Textura, luz y arquitectura floral adaptadas a tu esencia.</span>
 </p>
 <div class="gallery-grid">
-<div class="gallery-item reveal"><img src="images/scenery1.png" alt="Bride with colorful bouquet"></div>
-<div class="gallery-item reveal reveal-d1"><img src="images/scenery2.png" alt="Wedding accessories detail"></div>
-<div class="gallery-item reveal reveal-d2"><img src="images/scenery3.png" alt="Bride portrait with flowers"></div>
+  <div class="gallery-item reveal"><img src="images/scenery1.png" alt="Bride with colorful bouquet"></div>
+  <div class="gallery-item reveal reveal-d1"><img src="images/scenery2.png" alt="Bridal accessories and flowers detail"></div>
+  <div class="gallery-item reveal reveal-d2"><img src="images/scenery3.png" alt="Couple at elegant venue"></div>
 </div>
 </section>
 
 <!-- CASTING -->
 <section id="casting">
 <div>
-<div class="section-tag reveal">The Casting</div>
-<div class="section-title reveal reveal-d1" style="color:var(--cream)">Begin your<br><em>production</em></div>
-<p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
-Our curatorial eye requires a deep connection with our couples. We only take a limited number of 'Premiere' weddings each year to ensure exclusivity.
-</p>
-<br>
-<p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
-Apply below and let us begin crafting your story.
-</p>
+  <div class="section-tag reveal">
+    <span data-en>The Casting</span><span data-es>El Casting</span>
+  </div>
+  <div class="section-title reveal reveal-d1" style="color:var(--cream)">
+    <span data-en>Begin your<br><em>production</em></span>
+    <span data-es>Comienza tu<br><em>producción</em></span>
+  </div>
+  <p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
+    <span data-en>Our curatorial eye requires a deep connection with our couples. We only take a limited number of 'Premiere' weddings each year to ensure exclusivity.</span>
+    <span data-es>Nuestra mirada curatorial requiere una conexión profunda con nuestras parejas. Solo tomamos un número limitado de bodas 'Premiere' al año para garantizar la exclusividad.</span>
+  </p>
+  <br>
+  <p class="section-text reveal reveal-d2" style="color:rgba(255,255,255,0.4)">
+    <span data-en>Apply below and let us begin crafting your story.</span>
+    <span data-es>Aplica a continuación y déjanos comenzar a crear tu historia.</span>
+  </p>
 </div>
 <div class="contact-form reveal reveal-d2">
-<div class="form-group">
-<label>Lead Protagonist</label>
-<input type="text" placeholder="Your name">
-</div>
-<div class="form-group">
-<label>Email Address</label>
-<input type="email" placeholder="your@email.com">
-</div>
-<div class="form-row">
-<div class="form-group">
-<label>Choose Your Scene</label>
-<select>
-<option value="">Select destination</option>
-<option>Cancún</option>
-<option>Tulum</option>
-<option>Playa del Carmen</option>
-<option>Puerto Vallarta</option>
-<option>Chapala</option>
-<option>Ajijic</option>
-<option>Other</option>
-</select>
-</div>
-<div class="form-group">
-<label>Production Funds</label>
-<select>
-<option value="">Select budget</option>
-<option>$20 - 35K</option>
-<option>$35 - 50K</option>
-<option>$50K +</option>
-</select>
-</div>
-</div>
-<div class="form-group">
-<label>Tell Us Your Story</label>
-<textarea placeholder="Share your vision with us..."></textarea>
-</div>
-<button class="btn-submit">Send My Audition</button>
+  <div class="form-group">
+    <label><span data-en>Lead Protagonist</span><span data-es>Protagonista Principal</span></label>
+    <input type="text" placeholder="Your name / Tu nombre">
+  </div>
+  <div class="form-group">
+    <label><span data-en>Email Address</span><span data-es>Correo Electrónico</span></label>
+    <input type="email" placeholder="your@email.com">
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label><span data-en>Choose Your Scene</span><span data-es>Elige tu Escenario</span></label>
+      <select>
+        <option value=""><span data-en>Select destination</span></option>
+        <option>Cancún</option>
+        <option>Tulum</option>
+        <option>Playa del Carmen</option>
+        <option>Puerto Vallarta</option>
+        <option>Chapala</option>
+        <option>Ajijic</option>
+        <option>Other / Otro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label><span data-en>Production Funds</span><span data-es>Presupuesto</span></label>
+      <select>
+        <option value=""><span data-en>Select budget</span></option>
+        <option>$20 - 35K</option>
+        <option>$35 - 50K</option>
+        <option>$50K +</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label><span data-en>Tell Us Your Story</span><span data-es>Cuéntanos tu Historia</span></label>
+    <textarea placeholder="Share your vision with us... / Comparte tu visión con nosotras..."></textarea>
+  </div>
+  <button class="btn-submit">
+    <span data-en>Send My Audition</span><span data-es>Enviar mi Audición</span>
+  </button>
 </div>
 </section>
 
 <!-- ARCHIVE -->
 <section id="archive">
-<div class="section-tag reveal">The Archive</div>
-<div class="section-title reveal reveal-d1">Real stories. <em>Private commissions.</em></div>
+<div class="section-tag reveal">
+  <span data-en>The Archive</span><span data-es>El Archivo</span>
+</div>
+<div class="section-title reveal reveal-d1">
+  <span data-en>Real stories. <em>Private commissions.</em></span>
+  <span data-es>Historias reales. <em>Comisiones privadas.</em></span>
+</div>
 <div class="archive-grid">
-<div class="archive-item reveal"><img src="images/archive1.png" alt="Couple beach wedding black and white"></div>
-<div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Fun beach wedding photo"></div>
-<div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
-<div class="archive-item reveal reveal-d1"><img src="images/archive4.png" alt="Cultural wedding celebration"></div>
-<div class="archive-item reveal reveal-d2"><img src="images/hero-couple.png" alt="Elegant couple portrait"></div>
+  <div class="archive-item reveal"><img src="images/archive1.png" alt="Cultural wedding celebration"></div>
+  <div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Editorial beach wedding photo"></div>
+  <div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
+  <div class="archive-item reveal reveal-d1"><img src="images/archive4.png" alt="Couple dancing at reception"></div>
+  <div class="archive-item reveal reveal-d2"><img src="images/archive5.png" alt="Elegant couple portrait"></div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
 <div class="footer-badges">
-<div class="footer-badge">Style Me Pretty</div>
-<div class="footer-badge">WedVibes Media</div>
+  <div class="footer-badge">Style Me Pretty</div>
+  <div class="footer-badge">WedVibes Media</div>
 </div>
 <div class="footer-logo">Luxury & Blush</div>
 <div class="footer-social">
-<a href="https://www.instagram.com/luxury.and.blush" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/weddingplannerguadalajara/" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@eventplannerdestination" target="_blank">TikTok</a>
-<a href="https://wa.me/523339686925" target="_blank">WhatsApp</a>
+  <a href="https://www.instagram.com/luxury.and.blush" target="_blank">Instagram</a>
+  <a href="https://www.facebook.com/weddingplannerguadalajara/" target="_blank">Facebook</a>
+  <a href="https://www.tiktok.com/@eventplannerdestination" target="_blank">TikTok</a>
+  <a href="https://wa.me/523339686925" target="_blank">WhatsApp</a>
 </div>
 <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
 
 <script>
+// NAV scroll
 window.addEventListener('scroll',()=>{
-document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)
 })
+
+// Mobile menu
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// Scroll reveal
 const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
 },{threshold:0.08,rootMargin:'0px 0px -30px 0px'})
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
+
+// Language toggle
+function setLang(lang){
+  const body=document.body
+  const btnEn=document.getElementById('btn-en')
+  const btnEs=document.getElementById('btn-es')
+  const mbtnEn=document.getElementById('mbtn-en')
+  const mbtnEs=document.getElementById('mbtn-es')
+  if(lang==='es'){
+    body.classList.add('lang-es')
+    btnEn.classList.remove('active'); btnEs.classList.add('active')
+    mbtnEn.classList.remove('active'); mbtnEs.classList.add('active')
+    document.documentElement.lang='es'
+  } else {
+    body.classList.remove('lang-es')
+    btnEs.classList.remove('active'); btnEn.classList.add('active')
+    mbtnEs.classList.remove('active'); mbtnEn.classList.add('active')
+    document.documentElement.lang='en'
+  }
+  localStorage.setItem('lb-lang',lang)
+}
+
+// Restore saved language
+const savedLang=localStorage.getItem('lb-lang')
+if(savedLang==='es') setLang('es')
 </script>
 </body>
 </html>
