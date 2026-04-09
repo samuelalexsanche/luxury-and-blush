@@ -150,9 +150,11 @@ section{padding:140px 80px}
 
 /* ARCHIVE */
 #archive{background:var(--cream);text-align:center}
-.archive-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:60px}
-.archive-item{overflow:hidden;aspect-ratio:1}
-.archive-item:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+.archive-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:60px}
+.archive-item{overflow:hidden}
+.archive-item:nth-child(1){grid-column:span 2;aspect-ratio:21/9}
+.archive-item:nth-child(2){aspect-ratio:4/3}
+.archive-item:nth-child(3){aspect-ratio:4/3}
 .archive-item img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
 .archive-item:hover img{transform:scale(1.04)}
 
@@ -189,8 +191,8 @@ section{padding:100px 24px}
 .gallery-item:nth-child(n){aspect-ratio:1}
 #casting{grid-template-columns:1fr;gap:50px}
 .form-row{grid-template-columns:1fr}
-.archive-grid{grid-template-columns:repeat(2,1fr)}
-.archive-item:nth-child(1){grid-column:span 2;grid-row:span 1;aspect-ratio:16/9}
+.archive-item:nth-child(1){aspect-ratio:16/9}
+.archive-item:nth-child(2),.archive-item:nth-child(3){aspect-ratio:1}
 .hero-content{padding:0 24px 60px}
 }
 @media(max-width:600px){
@@ -501,7 +503,6 @@ section{padding:100px 24px}
   <div class="archive-item reveal"><img src="images/archive1.png" alt="Cultural wedding celebration"></div>
   <div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Editorial beach wedding photo"></div>
   <div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
-  <div class="archive-item reveal reveal-d1"><img src="images/archive4.png" alt="Couple dancing at reception"></div>
 </div>
 </section>
 
