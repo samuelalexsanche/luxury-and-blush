@@ -33,14 +33,14 @@ body:not(.lang-es) [data-es]{display:none}
 body:not(.lang-es) [data-en]{display:inline}
 [data-es],[data-en]{display:inline}
 .lang-switch{display:flex;align-items:center;gap:6px}
-.lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;padding:0;transition:color 0.3s}
+.lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;padding:0;transition:color 0.3s}
 .lang-sep{font-size:10px}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
-.nav-logo{font-family:var(--serif);font-size:15px;letter-spacing:5px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:11px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
+.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-links a:hover,.nav-links a.active{color:var(--dark)}
