@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mattera-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "mattera-web", "-l", "3456"],
+      "port": 3456
+    }
+  ]
+}
