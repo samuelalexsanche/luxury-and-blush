@@ -1,0 +1,19 @@
+# Only track the Luxury and Blush project
+/*
+!/.gitignore
+!/index.html
+!/luxury-and-blush/
+!/luxury-and-blush/**
+
+# System files
+.DS_Store
+*.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+.claude/
+
+# Office temp files
+~$*
