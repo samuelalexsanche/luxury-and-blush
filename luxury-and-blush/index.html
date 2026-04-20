@@ -160,10 +160,12 @@ section{padding:140px 80px}
 .ig-profile-info{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .ig-username{font-family:var(--sans);font-size:22px;color:var(--dark);font-weight:400;letter-spacing:0.3px}
 .ig-profile:hover .ig-username{color:var(--gold)}
-.ig-handle{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0.3px}
+.ig-profile-stats{display:flex;gap:24px;font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0.2px}
+.ig-profile-stats span{display:inline-flex;align-items:center;gap:5px}
+.ig-profile-stats b{font-weight:600;color:var(--dark)}
 
 /* IG feed grid 3 x N — Instagram-like, photos only */
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:1000px;margin:0 auto;padding:0 20px}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:1000px;margin:0 auto;padding:0 20px}
 .ig-card{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:var(--dark)}
 .ig-card img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
 .ig-card:hover img{transform:scale(1.05)}
@@ -237,14 +239,14 @@ section{padding:100px 24px}
 .archive-item:nth-child(1){aspect-ratio:16/9}
 .archive-item:nth-child(2),.archive-item:nth-child(3){aspect-ratio:1}
 .hero-content{padding:0 24px 60px}
-.ig-grid{grid-template-columns:repeat(3,1fr);gap:3px}
+.ig-grid{grid-template-columns:repeat(3,1fr);gap:6px}
 .ig-prev,.ig-next{font-size:40px}
 .ig-lightbox{padding:40px 20px}
 .ig-profile{gap:18px;padding:0 16px}
 .ig-avatar{width:66px;height:66px}
 .ig-avatar-inner span{font-size:17px}
 .ig-username{font-size:18px}
-.ig-handle{font-size:12px}
+.ig-profile-stats{gap:16px;font-size:12px;flex-wrap:wrap}
 }
 @media(max-width:600px){
 .concept-grid{grid-template-columns:1fr}
@@ -580,9 +582,9 @@ section{padding:100px 24px}
   <div class="ig-avatar"><div class="ig-avatar-inner"><span>L&amp;B</span></div></div>
   <div class="ig-profile-info">
     <div class="ig-username">luxury.and.blush</div>
-    <div class="ig-handle">
-      <span data-en>Luxury destination weddings · Mexico</span>
-      <span data-es>Bodas de destino de lujo · México</span>
+    <div class="ig-profile-stats">
+      <span><b>2,325</b> <span data-en>posts</span><span data-es>publicaciones</span></span>
+      <span><b>4,484</b> <span data-en>followers</span><span data-es>seguidores</span></span>
     </div>
   </div>
 </a>
