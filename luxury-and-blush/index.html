@@ -158,24 +158,17 @@ section{padding:140px 80px}
 .ig-avatar-inner{width:100%;height:100%;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;overflow:hidden;border:3px solid var(--warm)}
 .ig-avatar-inner span{font-family:var(--serif);font-size:22px;letter-spacing:1.5px;color:var(--dark);font-weight:400}
 .ig-profile-info{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.ig-username{font-family:var(--sans);font-size:22px;color:var(--dark);font-weight:400;letter-spacing:0.3px;text-decoration:none}
-.ig-username:hover{color:var(--gold)}
-.ig-profile-stats{display:flex;gap:22px;font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:500}
-.ig-profile-stats span{display:inline-flex;align-items:center;gap:6px}
-.ig-profile-stats svg{width:14px;height:14px;fill:currentColor;opacity:0.85}
-.ig-profile-stats b{font-weight:600;color:var(--dark)}
+.ig-username{font-family:var(--sans);font-size:22px;color:var(--dark);font-weight:400;letter-spacing:0.3px}
+.ig-profile:hover .ig-username{color:var(--gold)}
+.ig-handle{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400;letter-spacing:0.3px}
 
-/* IG feed grid 3 x N — Instagram-like */
-.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 20px;max-width:1000px;margin:0 auto;padding:0 20px}
-.ig-card{display:flex;flex-direction:column;gap:10px;cursor:pointer}
-.ig-thumb{position:relative;aspect-ratio:1;overflow:hidden;background:var(--dark)}
-.ig-thumb img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
-.ig-card:hover .ig-thumb img{transform:scale(1.05)}
-.ig-thumb::after{content:'';position:absolute;inset:0;background:rgba(26,26,26,0);transition:background 0.3s}
-.ig-card:hover .ig-thumb::after{background:rgba(26,26,26,0.15)}
-.ig-stats{display:flex;justify-content:center;gap:20px;font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0.2px}
-.ig-stats span{display:inline-flex;align-items:center;gap:7px}
-.ig-stats svg{width:16px;height:16px;fill:currentColor;opacity:0.75}
+/* IG feed grid 3 x N — Instagram-like, photos only */
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:1000px;margin:0 auto;padding:0 20px}
+.ig-card{position:relative;aspect-ratio:1;overflow:hidden;cursor:pointer;background:var(--dark)}
+.ig-card img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.ig-card:hover img{transform:scale(1.05)}
+.ig-card::after{content:'';position:absolute;inset:0;background:rgba(26,26,26,0);transition:background 0.3s;pointer-events:none}
+.ig-card:hover::after{background:rgba(26,26,26,0.18)}
 
 .ig-follow{display:inline-flex;align-items:center;gap:12px;margin-top:64px;padding:16px 32px;background:var(--dark);color:var(--cream);text-decoration:none;font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:all 0.4s;font-weight:500;border:1px solid var(--dark)}
 .ig-follow:hover{background:var(--gold);border-color:var(--gold);color:var(--white)}
@@ -244,17 +237,14 @@ section{padding:100px 24px}
 .archive-item:nth-child(1){aspect-ratio:16/9}
 .archive-item:nth-child(2),.archive-item:nth-child(3){aspect-ratio:1}
 .hero-content{padding:0 24px 60px}
-.ig-grid{grid-template-columns:repeat(3,1fr);gap:10px 8px}
+.ig-grid{grid-template-columns:repeat(3,1fr);gap:3px}
 .ig-prev,.ig-next{font-size:40px}
 .ig-lightbox{padding:40px 20px}
 .ig-profile{gap:18px;padding:0 16px}
 .ig-avatar{width:66px;height:66px}
 .ig-avatar-inner span{font-size:17px}
 .ig-username{font-size:18px}
-.ig-profile-stats{gap:14px;font-size:12px;flex-wrap:wrap}
-.ig-stats{gap:12px;font-size:11px}
-.ig-stats svg{width:13px;height:13px}
-.ig-card{gap:6px}
+.ig-handle{font-size:12px}
 }
 @media(max-width:600px){
 .concept-grid{grid-template-columns:1fr}
@@ -590,9 +580,9 @@ section{padding:100px 24px}
   <div class="ig-avatar"><div class="ig-avatar-inner"><span>L&amp;B</span></div></div>
   <div class="ig-profile-info">
     <div class="ig-username">luxury.and.blush</div>
-    <div class="ig-profile-stats">
-      <span><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zm2 2v12h12V6zM8 8h8v8H8z"/></svg><b>—</b>&nbsp;<span data-en>posts</span><span data-es>publicaciones</span></span>
-      <span><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg><b>—</b>&nbsp;<span data-en>followers</span><span data-es>seguidores</span></span>
+    <div class="ig-handle">
+      <span data-en>Luxury destination weddings · Mexico</span>
+      <span data-es>Bodas de destino de lujo · México</span>
     </div>
   </div>
 </a>
@@ -661,30 +651,33 @@ function setLang(lang){
 const saved=localStorage.getItem('lb-lang')
 if(saved==='es') setLang('es')
 
-/* INSTAGRAM FEED */
-/* Add/edit posts here. likes/comments are displayed below each tile.
-   Grid flows 3 per row automatically. Target layout: 3x5 = 15 posts. */
+/* INSTAGRAM FEED — 3x5 grid of real posts */
 const igPosts=[
-  {img:'images/ig-1.png',likes:'—',comments:'—',url:'https://www.instagram.com/p/DABh69wuUCh/'},
-  {img:'images/ig-2.png',likes:'—',comments:'—',url:'https://www.instagram.com/p/DABiGZOuhcO/'},
-  {img:'images/ig-3.png',likes:'—',comments:'—',url:'https://www.instagram.com/p/DJH5a6Hzwav/'},
-  {img:'images/ig-4.png',likes:'—',comments:'—',url:'https://www.instagram.com/p/C_QmOhgONZB/'}
+  {img:'images/ig-1.png',url:'https://www.instagram.com/p/DABh69wuUCh/'},
+  {img:'images/ig-2.png',url:'https://www.instagram.com/p/DABiGZOuhcO/'},
+  {img:'images/ig-3.png',url:'https://www.instagram.com/p/DJH5a6Hzwav/'},
+  {img:'images/ig-4.png',url:'https://www.instagram.com/p/C_QmOhgONZB/'},
+  {img:'images/ig-5.png',url:'https://www.instagram.com/p/C_Qk94FuSrt/'},
+  {img:'images/ig-6.png',url:'https://www.instagram.com/p/C-lSR-kRu82/'},
+  {img:'images/ig-7.png',url:'https://www.instagram.com/p/C-lSEJZRlnQ/'},
+  {img:'images/ig-8.png',url:'https://www.instagram.com/p/C-lR3WDxAmZ/'},
+  {img:'images/ig-9.png',url:'https://www.instagram.com/p/C-Bah-cOsKe/'},
+  {img:'images/ig-10.png',url:'https://www.instagram.com/p/C-BaCsOuL1I/'},
+  {img:'images/ig-11.png',url:'https://www.instagram.com/p/C9Ku9ZTug3s/'},
+  {img:'images/ig-12.png',url:'https://www.instagram.com/p/CrEf11EOTjP/'},
+  {img:'images/ig-13.png',url:'https://www.instagram.com/p/CL8pgs6MYMZ/'},
+  {img:'images/ig-14.png',url:'https://www.instagram.com/p/CC9_pZMM7vT/'},
+  {img:'images/ig-15.png',url:'https://www.instagram.com/p/B5RBo1SFzCi/'}
 ];
 
 /* Render feed grid */
 (function renderIgFeed(){
   const grid=document.getElementById('igGrid');
   if(!grid) return;
-  const heart='<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
-  const chat='<svg viewBox="0 0 24 24"><path d="M21 6h-2v9H6v2c0 .55.45 1 1 1h11l4 4V7c0-.55-.45-1-1-1zm-4 6V3c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v14l4-4h10c.55 0 1-.45 1-1z"/></svg>';
   grid.innerHTML=igPosts.map((p,i)=>{
     const delay=i%3===0?'':(i%3===1?'reveal-d1':'reveal-d2');
-    return `<div class="ig-card reveal ${delay}" onclick="openIgLightbox(${i})">
-      <div class="ig-thumb"><img src="${p.img}" alt="Instagram post by Luxury and Blush"></div>
-      <div class="ig-stats"><span>${heart}${p.likes}</span><span>${chat}${p.comments}</span></div>
-    </div>`;
+    return `<div class="ig-card reveal ${delay}" onclick="openIgLightbox(${i})"><img src="${p.img}" alt="Instagram post by Luxury and Blush"></div>`;
   }).join('');
-  /* Re-run reveal observer on the new tiles */
   grid.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 })();
 
