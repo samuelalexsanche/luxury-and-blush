@@ -6,7 +6,7 @@
 <title>Luxury and Blush | Luxury Destination Weddings in Mexico</title>
 <meta name="description" content="Luxury destination wedding planner in Mexico. Editorial design, floral artistry, and intimate storytelling for iconic love stories in Tulum, Cancún, Puerto Vallarta, and Jalisco.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -148,6 +148,20 @@ section{padding:140px 80px}
 .btn-submit{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:18px 44px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer;transition:all 0.4s;font-weight:500;margin-top:8px;align-self:flex-start}
 .btn-submit:hover{background:var(--gold);color:var(--white)}
 
+/* FEATURED IN */
+#featured{background:var(--cream);text-align:center;padding:120px 80px}
+.featured-rule{width:60px;height:1px;background:var(--dark);margin:0 auto;opacity:0.5}
+.featured-title{font-family:var(--serif);font-size:clamp(34px,4vw,46px);font-weight:300;color:var(--dark);margin:40px auto 70px;letter-spacing:0.5px}
+.featured-logos{display:grid;grid-template-columns:repeat(5,1fr);align-items:center;justify-items:center;gap:50px 60px;max-width:1200px;margin:0 auto 70px;padding:0 20px}
+.featured-logo{display:flex;align-items:center;justify-content:center;height:70px;opacity:0.75;transition:opacity 0.35s;filter:grayscale(100%) contrast(1.05)}
+.featured-logo:hover{opacity:1;filter:grayscale(0%) contrast(1)}
+.featured-logo img{max-height:100%;max-width:180px;width:auto;height:auto;object-fit:contain}
+/* Text-based logos (branded typography) */
+.logo-wedding-chicks{font-family:'Pinyon Script',cursive;font-size:42px;color:var(--dark);line-height:1;letter-spacing:0.5px;white-space:nowrap}
+.logo-bodas{font-family:var(--sans);font-size:26px;color:var(--dark);font-weight:700;letter-spacing:-0.5px;white-space:nowrap}
+.logo-bodas span{font-weight:300;font-size:15px;color:var(--muted);letter-spacing:0.3px;vertical-align:1px}
+.logo-wedvibes{font-family:var(--sans);font-size:19px;color:var(--dark);font-weight:700;letter-spacing:1.5px;white-space:nowrap}
+
 /* INSTAGRAM */
 #instagram{background:var(--warm);text-align:center}
 .ig-intro{max-width:720px;margin:0 auto 70px}
@@ -239,6 +253,15 @@ section{padding:100px 24px}
 .archive-item:nth-child(1){aspect-ratio:16/9}
 .archive-item:nth-child(2),.archive-item:nth-child(3){aspect-ratio:1}
 .hero-content{padding:0 24px 60px}
+#featured{padding:80px 24px}
+.featured-logos{grid-template-columns:repeat(2,1fr);gap:40px 30px;margin-bottom:50px}
+.featured-logo{height:56px}
+.featured-logo img{max-width:140px}
+.logo-wedding-chicks{font-size:34px}
+.logo-bodas{font-size:22px}
+.logo-bodas span{font-size:13px}
+.logo-wedvibes{font-size:15px;letter-spacing:1.2px}
+.featured-title{margin:30px auto 50px}
 .ig-grid{grid-template-columns:repeat(3,1fr);gap:6px}
 .ig-prev,.ig-next{font-size:40px}
 .ig-lightbox{padding:40px 20px}
@@ -269,6 +292,7 @@ section{padding:100px 24px}
   <a href="#scenery"><span data-en>Scenery</span><span data-es>Escenografía</span></a>
   <a href="#casting"><span data-en>The Casting</span><span data-es>El Casting</span></a>
   <a href="#archive"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
+  <a href="#featured"><span data-en>Press</span><span data-es>Prensa</span></a>
   <a href="#instagram"><span data-en>Instagram</span><span data-es>Instagram</span></a>
   <a href="reviews.html"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
   <div class="lang-switch">
@@ -290,6 +314,7 @@ section{padding:100px 24px}
   <a href="#scenery" onclick="toggleMenu()"><span data-en>Scenery</span><span data-es>Escenografía</span></a>
   <a href="#casting" onclick="toggleMenu()"><span data-en>The Casting</span><span data-es>El Casting</span></a>
   <a href="#archive" onclick="toggleMenu()"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
+  <a href="#featured" onclick="toggleMenu()"><span data-en>Press</span><span data-es>Prensa</span></a>
   <a href="#instagram" onclick="toggleMenu()"><span data-en>Instagram</span><span data-es>Instagram</span></a>
   <a href="reviews.html" onclick="toggleMenu()"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
   <div class="mobile-lang">
@@ -559,6 +584,23 @@ section{padding:100px 24px}
   <div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Editorial beach wedding photo"></div>
   <div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
 </div>
+</section>
+
+<!-- FEATURED IN -->
+<section id="featured">
+<div class="featured-rule reveal"></div>
+<h2 class="featured-title reveal reveal-d1">
+  <span data-en>Featured In</span>
+  <span data-es>Presente En</span>
+</h2>
+<div class="featured-logos">
+  <div class="featured-logo reveal"><span class="logo-wedding-chicks">Wedding Chicks</span></div>
+  <div class="featured-logo reveal reveal-d1"><img src="images/logos/style-me-pretty.png" alt="Style Me Pretty"></div>
+  <div class="featured-logo reveal reveal-d2"><span class="logo-bodas">bodas<span>.com.mx</span></span></div>
+  <div class="featured-logo reveal reveal-d3"><span class="logo-wedvibes">WEDVIBES.MEDIA</span></div>
+  <div class="featured-logo reveal reveal-d3"><img src="images/logos/green-wedding-shoes.png" alt="Green Wedding Shoes"></div>
+</div>
+<div class="featured-rule reveal"></div>
 </section>
 
 <!-- INSTAGRAM -->
