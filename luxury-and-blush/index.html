@@ -223,8 +223,10 @@ section{padding:140px 80px}
 .ig-counter{position:absolute;top:26px;left:32px;color:rgba(255,255,255,0.5);font-family:var(--sans);font-size:11px;letter-spacing:3px}
 
 /* ARCHIVE */
-#archive{background:var(--cream);text-align:center}
-.archive-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:60px}
+#archive{background:var(--cream);padding:140px 80px}
+.archive-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:60px}
+.archive-header .section-title{font-size:clamp(44px,6vw,78px);margin-bottom:0}
+.archive-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .archive-item{overflow:hidden}
 .archive-item:nth-child(1){grid-column:span 2;aspect-ratio:21/9}
 .archive-item:nth-child(2){aspect-ratio:4/3}
@@ -290,6 +292,7 @@ section{padding:100px 24px}
 .concept-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);padding:24px 20px}
 .scenery-split{grid-template-columns:1fr}
 .archive-grid{grid-template-columns:1fr}
+.archive-header{grid-template-columns:1fr}
 .archive-item:nth-child(1){grid-column:span 1}
 }
 </style>
@@ -682,12 +685,21 @@ section{padding:100px 24px}
 
 <!-- ARCHIVE -->
 <section id="archive">
-<div class="section-tag reveal">
-  <span data-en>The Archive</span><span data-es>El Archivo</span>
-</div>
-<div class="section-title reveal reveal-d1">
-  <span data-en>Real stories. <em>Private commissions.</em></span>
-  <span data-es>Historias reales. <em>Comisiones privadas.</em></span>
+<div class="archive-header">
+  <div>
+    <div class="section-tag reveal">
+      <span data-en>The Archive</span><span data-es>El Archivo</span>
+    </div>
+    <div class="section-tag-line reveal"></div>
+    <div class="section-title reveal reveal-d1">
+      <span data-en>Real stories.<br><em>Private commissions.</em></span>
+      <span data-es>Historias reales.<br><em>Comisiones privadas.</em></span>
+    </div>
+  </div>
+  <p class="section-text reveal reveal-d2">
+    <span data-en>A journey through our premieres made into weddings. Timeless, avant-garde, and deeply aesthetic — scenes that keep breathing long after that singular moment.</span>
+    <span data-es>Un recorrido por nuestros estrenos convertidos en bodas. Atemporales, vanguardistas y profundamente estéticos — escenas que siguen respirando mucho después de ese momento singular.</span>
+  </p>
 </div>
 <div class="archive-grid">
   <div class="archive-item reveal"><img src="images/archive1.png" alt="Cultural wedding celebration"></div>
