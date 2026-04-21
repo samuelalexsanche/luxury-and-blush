@@ -130,15 +130,12 @@ section{padding:140px 80px}
 .dest-region{font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-top:4px}
 
 /* SCENERY */
-#scenery{background:var(--warm);text-align:center}
-.scenery-text{max-width:640px;margin:0 auto}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:60px}
-.gallery-item{overflow:hidden}
-.gallery-item img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
-.gallery-item:hover img{transform:scale(1.04)}
-.gallery-item:nth-child(1){aspect-ratio:3/4}
-.gallery-item:nth-child(2){aspect-ratio:1}
-.gallery-item:nth-child(3){aspect-ratio:3/4}
+#scenery{background:var(--cream);padding:140px 80px;display:flex;flex-direction:column;gap:120px}
+.scenery-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.scenery-img-block{overflow:hidden}
+.scenery-img-block img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.scenery-img-block:hover img{transform:scale(1.03)}
+.scenery-img-caption{font-family:var(--sans);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-top:14px;font-weight:300}
 
 /* CASTING */
 #casting{background:var(--dark);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start}
@@ -256,8 +253,7 @@ section{padding:100px 24px}
 #strategist{grid-template-columns:1fr;gap:40px}
 .concept-grid{gap:0}
 .destinations-grid{grid-template-columns:1fr}
-.gallery-grid{grid-template-columns:1fr 1fr}
-.gallery-item:nth-child(n){aspect-ratio:1}
+.scenery-split{grid-template-columns:1fr;gap:40px}
 #casting{grid-template-columns:1fr;gap:50px}
 .form-row{grid-template-columns:1fr}
 .archive-item:nth-child(1){aspect-ratio:16/9}
@@ -284,7 +280,7 @@ section{padding:100px 24px}
 @media(max-width:600px){
 .concept-grid{grid-template-columns:1fr}
 .concept-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);padding:24px 20px}
-.gallery-grid{grid-template-columns:1fr}
+.scenery-split{grid-template-columns:1fr}
 .archive-grid{grid-template-columns:1fr}
 .archive-item:nth-child(1){grid-column:span 1}
 }
@@ -528,23 +524,59 @@ section{padding:100px 24px}
 
 <!-- SCENERY -->
 <section id="scenery">
-<div class="section-tag reveal">
-  <span data-en>The Scenery</span><span data-es>La Escenografía</span>
-</div>
-<div class="section-tag-line reveal"></div>
-<div class="section-title reveal reveal-d1">
-  <span data-en>Atmospheres that<br><em>tell stories</em></span>
-  <span data-es>Atmósferas que<br><em>cuentan historias</em></span>
-</div>
-<p class="section-text scenery-text reveal reveal-d2" style="max-width:640px;margin:0 auto">
-  <span data-en>We curate atmospheres with intention and editorial balance. Every setting is designed to honor the essence of our Main Characters — selecting light, textures, and natural elements with a curatorial eye to create living, harmonic environments that transform each location into something truly unforgettable.</span>
-  <span data-es>Curamos atmósferas con intención y equilibrio editorial. Cada escenario está diseñado para honrar la esencia de nuestros Personajes Principales — seleccionando luz, texturas y elementos naturales con un ojo curatorial para crear entornos vivos y armónicos que transforman cada lugar en algo verdaderamente inolvidable.</span>
-</p>
-<div class="gallery-grid">
-  <div class="gallery-item reveal"><img src="images/scenery1.png" alt="Bride with colorful bouquet"></div>
-  <div class="gallery-item reveal reveal-d1"><img src="images/scenery2.png" alt="Bridal accessories and flowers detail"></div>
-  <div class="gallery-item reveal reveal-d2"><img src="images/scenery3.png" alt="Couple at elegant venue"></div>
-</div>
+
+  <!-- Part 1: The Scenery -->
+  <div class="scenery-split">
+    <div>
+      <div class="section-tag reveal">
+        <span data-en>The Scenery</span><span data-es>La Escenografía</span>
+      </div>
+      <div class="section-tag-line reveal"></div>
+      <div class="section-title reveal reveal-d1">
+        <span data-en>Atmospheres that<br><em>tell stories</em></span>
+        <span data-es>Atmósferas que<br><em>cuentan historias</em></span>
+      </div>
+      <p class="section-text reveal reveal-d2">
+        <span data-en>We curate atmospheres with intention and editorial balance. Every setting is designed to honor the essence of our Main Characters — selecting light, textures, and natural elements with a curatorial eye to create living, harmonic environments that transform each location into something truly unforgettable.</span>
+        <span data-es>Curamos atmósferas con intención y equilibrio editorial. Cada escenario está diseñado para honrar la esencia de nuestros Personajes Principales — seleccionando luz, texturas y elementos naturales con un ojo curatorial para crear entornos vivos y armónicos que transforman cada lugar en algo verdaderamente inolvidable.</span>
+      </p>
+    </div>
+    <div>
+      <div class="scenery-img-block reveal reveal-d1">
+        <img src="images/scenery1.png" alt="Wedding scene">
+      </div>
+      <div class="scenery-img-caption reveal reveal-d2">
+        <span data-en>Wedding scene</span><span data-es>Escena de boda</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Part 2: Botanical Art -->
+  <div class="scenery-split">
+    <div>
+      <div class="scenery-img-block reveal">
+        <img src="images/scenery2.png" alt="Botanical installation">
+      </div>
+      <div class="scenery-img-caption reveal reveal-d1">
+        <span data-en>Botanical installation</span><span data-es>Instalación botánica</span>
+      </div>
+    </div>
+    <div>
+      <div class="section-tag reveal">
+        <span data-en>Botanical Art</span><span data-es>Arte Botánico</span>
+      </div>
+      <div class="section-tag-line reveal"></div>
+      <div class="section-title reveal reveal-d1">
+        <span data-en>Living art,<br><em>not decoration</em></span>
+        <span data-es>Arte vivo,<br><em>no decoración</em></span>
+      </div>
+      <p class="section-text reveal reveal-d2">
+        <span data-en>Our botanical work is conceived as living art. Sophisticated, expressive, and organic — our floral compositions transmit emotion and movement. Each piece grows from a deep connection with nature, refining the expected into the signature mystical seal of our studio.</span>
+        <span data-es>Nuestro trabajo botánico se concibe como arte vivo. Sofisticado, expresivo y orgánico — nuestras composiciones florales transmiten emoción y movimiento. Cada pieza crece de una conexión profunda con la naturaleza, refinando lo esperado en el sello místico de nuestro estudio.</span>
+      </p>
+    </div>
+  </div>
+
 </section>
 
 <!-- CASTING -->
