@@ -74,8 +74,10 @@ nav.scrolled .menu-toggle span{background:var(--dark)}
 .hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 60px 90px;z-index:2}
 .hero-tag{font-family:var(--sans);font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--white);margin-bottom:24px;font-weight:500}
 .hero h1{font-family:var(--serif);font-size:clamp(50px,7.5vw,90px);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:20px}
-.hero h1 em{font-style:italic;font-weight:300}
-.hero-sub{font-family:var(--sans);font-size:13px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:44px;font-weight:400}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--gold)}
+.hero-sub{font-family:var(--sans);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:44px;font-weight:400}
+.hero-scroll{position:absolute;bottom:0;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0;z-index:2}
+.hero-scroll-line{width:1px;height:60px;background:var(--gold);opacity:0.7}
 .btn{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:18px 44px;border:1px solid rgba(255,255,255,0.6);color:var(--white);text-decoration:none;transition:all 0.4s;font-weight:500}
 .btn:hover{background:var(--white);color:var(--dark)}
 .btn-gold{border-color:var(--gold);color:var(--gold)}
@@ -333,21 +335,24 @@ section{padding:100px 24px}
 <div class="hero-overlay"></div>
 <div class="hero-content">
   <div class="hero-tag">
-    <span data-en>Luxury Destination Weddings in Mexico</span>
-    <span data-es>Bodas de Destino de Lujo en México</span>
+    <span data-en>Luxury Destination Weddings &nbsp;·&nbsp; Mexico &amp; Europe</span>
+    <span data-es>Bodas de Destino de Lujo &nbsp;·&nbsp; México &amp; Europa</span>
   </div>
   <h1>
-    <span data-en>Directing <em>iconic<br>love stories</em></span>
-    <span data-es>Dirigiendo <em>historias de<br>amor icónicas</em></span>
+    <span data-en>Directing <em>iconic</em><br>love stories</span>
+    <span data-es>Dirigiendo historias de<br>amor <em>icónicas</em></span>
   </h1>
   <p class="hero-sub">
-    <span data-en>Editorial · Mystical · Deeply Real</span>
-    <span data-es>Editorial · Místico · Profundamente Real</span>
+    <span data-en>Editorial &nbsp;·&nbsp; Mystical &nbsp;·&nbsp; Deeply Real</span>
+    <span data-es>Editorial &nbsp;·&nbsp; Místico &nbsp;·&nbsp; Profundamente Real</span>
   </p>
   <a href="#casting" class="btn">
-    <span data-en>Apply for your Casting</span>
-    <span data-es>Aplica a tu Casting</span>
+    <span data-en>Submit your Casting</span>
+    <span data-es>Envía tu Casting</span>
   </a>
+</div>
+<div class="hero-scroll">
+  <div class="hero-scroll-line"></div>
 </div>
 </section>
 
