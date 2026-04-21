@@ -112,7 +112,12 @@ section{padding:140px 80px}
 
 /* STRATEGIST */
 #strategist{background:var(--warm);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
-.strategist-quote{font-family:var(--serif);font-size:clamp(26px,3.2vw,40px);font-weight:300;line-height:1.4;color:var(--dark);font-style:italic;padding-left:36px;border-left:2px solid var(--gold)}
+.strategist-quote{font-family:var(--serif);font-size:clamp(16px,1.5vw,20px);font-weight:300;line-height:1.65;color:var(--gold);font-style:italic;margin-top:36px}
+.strategist-stats{display:flex;flex-direction:column;gap:0}
+.strategist-stat{padding:36px 0;border-bottom:1px solid var(--blush)}
+.strategist-stat:first-child{border-top:1px solid var(--blush)}
+.strategist-stat-number{font-family:var(--serif);font-size:clamp(52px,5.5vw,72px);font-weight:300;color:var(--dark);line-height:1;margin-bottom:10px}
+.strategist-stat-label{font-family:var(--sans);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:400}
 
 /* DESTINATIONS */
 #sets{background:var(--cream);text-align:center}
@@ -434,24 +439,48 @@ section{padding:100px 24px}
   <div class="section-tag reveal">
     <span data-en>The Strategist</span><span data-es>La Estratega</span>
   </div>
+  <div class="section-tag-line reveal"></div>
   <div class="section-title reveal reveal-d1">
     <span data-en>The blueprint:<br><em>19 years of<br>flawless execution</em></span>
     <span data-es>El plan maestro:<br><em>19 años de<br>ejecución impecable</em></span>
   </div>
   <p class="section-text reveal reveal-d2">
-    <span data-en>Mastery is built over time. With nearly two decades in the industry and 12 years specialized in Destination Weddings, our logistics are invisible, allowing you to remain the Main Character.</span>
-    <span data-es>La maestría se construye con el tiempo. Con casi dos décadas en la industria y 12 años especializadas en Bodas de Destino, nuestra logística es invisible para que tú sigas siendo el Personaje Principal.</span>
+    <span data-en>Mastery is built over time. With 19 years in the industry and 16 specialized in Destination Weddings, I take command of every moving part — so the production flows with the harmony and beauty of a masterpiece.</span>
+    <span data-es>La maestría se construye con el tiempo. Con 19 años en la industria y 16 especializados en Bodas de Destino, tomo el mando de cada parte — para que la producción fluya con la armonía y belleza de una obra maestra.</span>
   </p>
   <br>
   <p class="section-text reveal reveal-d2">
-    <span data-en>From budget optimization to full-scale production, we take the lead so you can live the experience.</span>
-    <span data-es>Desde la optimización del presupuesto hasta la producción a gran escala, tomamos las riendas para que tú puedas vivir la experiencia.</span>
+    <span data-en>From the first idea to the last moment of the celebration, I work as the strategist of your story: optimizing budgets, curating an elite network of collaborators, and ensuring every detail reflects your unique vision.</span>
+    <span data-es>Desde la primera idea hasta el último momento de la celebración, trabajo como la estratega de tu historia: optimizando presupuestos, curando una red élite de colaboradores y asegurando que cada detalle refleje tu visión única.</span>
   </p>
+  <br>
+  <p class="section-text reveal reveal-d3">
+    <span data-en>Our operational expertise shields your experience from noise. You live the Premiere. We handle everything else.</span>
+    <span data-es>Nuestra experiencia operacional protege tu experiencia del ruido. Tú vives el Estreno. Nosotras nos encargamos de todo lo demás.</span>
+  </p>
+  <div class="strategist-quote reveal reveal-d3">
+    <span data-en>"Every detail is a frame. Every moment, a scene. And you are always the lead."</span>
+    <span data-es>"Cada detalle es un encuadre. Cada momento, una escena. Y tú siempre eres el protagonista."</span>
+  </div>
 </div>
-<div class="reveal reveal-d2">
-  <div class="strategist-quote">
-    <span data-en>Every detail is a frame, every moment a scene — and you are always the lead.</span>
-    <span data-es>Cada detalle es un encuadre, cada momento una escena — y tú siempre eres el protagonista.</span>
+<div class="strategist-stats reveal reveal-d2">
+  <div class="strategist-stat">
+    <div class="strategist-stat-number">19</div>
+    <div class="strategist-stat-label">
+      <span data-en>Years of Experience</span><span data-es>Años de Experiencia</span>
+    </div>
+  </div>
+  <div class="strategist-stat">
+    <div class="strategist-stat-number">16</div>
+    <div class="strategist-stat-label">
+      <span data-en>Years in Destination Weddings</span><span data-es>Años en Bodas de Destino</span>
+    </div>
+  </div>
+  <div class="strategist-stat">
+    <div class="strategist-stat-number">100%</div>
+    <div class="strategist-stat-label">
+      <span data-en>Tailor-Made</span><span data-es>A la Medida</span>
+    </div>
   </div>
 </div>
 </section>
