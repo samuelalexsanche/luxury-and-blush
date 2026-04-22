@@ -56,16 +56,75 @@ nav .lang-btn.active{color:var(--white);font-weight:600}
 nav.scrolled .lang-btn.active{color:var(--dark)}
 nav .lang-sep{color:rgba(255,255,255,0.3)}
 nav.scrolled .lang-sep{color:var(--blush)}
-.menu-toggle{display:none;flex-direction:column;gap:6px;cursor:pointer;z-index:101;padding:8px}
-.menu-toggle span{width:22px;height:1px;background:var(--white);transition:all 0.3s}
+/* HAMBURGER TOGGLE */
+.menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;z-index:201;padding:8px;width:36px;height:36px}
+.menu-toggle span{width:22px;height:1px;background:var(--white);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);transform-origin:center}
 nav.scrolled .menu-toggle span{background:var(--dark)}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--serif);font-size:34px;color:var(--dark);text-decoration:none;font-weight:300;letter-spacing:1px}
-.mobile-lang{display:flex;gap:12px;margin-top:8px;align-items:center}
-.mobile-lang .lang-btn{color:var(--muted);font-size:13px}
-.mobile-lang .lang-btn.active{color:var(--dark);font-weight:600}
-.mobile-lang .lang-sep{color:var(--blush);font-size:12px}
+.menu-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.menu-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+nav.scrolled .menu-toggle.open span{background:var(--dark)}
+.menu-toggle.open span{background:var(--white)!important}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{
+  position:fixed;inset:0;z-index:200;
+  background:var(--dark);
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:flex-start;
+  padding:0 48px;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu::before{
+  content:'';position:absolute;top:0;right:0;
+  width:1px;height:100%;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+  opacity:0.3;
+}
+.mobile-menu-logo{
+  position:absolute;top:28px;left:48px;
+  font-family:var(--serif);font-size:12px;letter-spacing:4px;
+  text-transform:uppercase;color:rgba(255,255,255,0.4);
+  text-decoration:none;
+}
+.mobile-menu-links{display:flex;flex-direction:column;gap:0;width:100%}
+.mobile-menu-links a{
+  font-family:var(--serif);font-size:clamp(32px,8vw,48px);
+  color:rgba(255,255,255,0.85);text-decoration:none;
+  font-weight:300;letter-spacing:1px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  display:flex;align-items:center;gap:16px;
+  transition:color 0.3s,padding-left 0.3s;
+  position:relative;
+}
+.mobile-menu-links a:first-child{border-top:1px solid rgba(255,255,255,0.07)}
+.mobile-menu-links a::before{
+  content:'';display:block;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:width 0.3s;
+  flex-shrink:0;
+}
+.mobile-menu-links a:hover{color:var(--white);padding-left:6px}
+.mobile-menu-links a:hover::before{width:24px}
+.mobile-menu-bottom{
+  position:absolute;bottom:40px;left:48px;right:48px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mobile-lang{display:flex;gap:10px;align-items:center}
+.mobile-lang .lang-btn{
+  color:rgba(255,255,255,0.35);font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;
+  background:none;border:none;cursor:pointer;font-family:var(--sans);
+  transition:color 0.3s;padding:0;
+}
+.mobile-lang .lang-btn.active{color:var(--white);font-weight:500}
+.mobile-lang .lang-btn:hover{color:var(--gold)}
+.mobile-lang .lang-sep{color:rgba(255,255,255,0.15);font-size:11px}
+.mobile-menu-tag{font-family:var(--sans);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
 
 /* HERO */
 .hero{height:100vh;position:relative;overflow:hidden;background:var(--dark)}
@@ -318,27 +377,27 @@ section{padding:100px 24px;width:100%;box-sizing:border-box}
     <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
   </div>
 </div>
-<div class="menu-toggle" onclick="toggleMenu()">
+<div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
   <span></span><span></span><span></span>
 </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#hello" onclick="toggleMenu()"><span data-en>Backstage</span><span data-es>Backstage</span></a>
-  <a href="#concept" onclick="toggleMenu()"><span data-en>The Concept</span><span data-es>El Concepto</span></a>
-  <a href="#strategist" onclick="toggleMenu()"><span data-en>The Strategist</span><span data-es>La Estratega</span></a>
-  <a href="#sets" onclick="toggleMenu()"><span data-en>Epic Sets</span><span data-es>Escenarios</span></a>
-  <a href="#scenery" onclick="toggleMenu()"><span data-en>The Scenery</span><span data-es>La Escenografía</span></a>
-  <a href="#vision" onclick="toggleMenu()"><span data-en>The Vision</span><span data-es>La Visión</span></a>
-  <a href="#casting" onclick="toggleMenu()"><span data-en>The Casting</span><span data-es>El Casting</span></a>
-  <a href="#archive" onclick="toggleMenu()"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
-  <a href="#featured" onclick="toggleMenu()"><span data-en>Press</span><span data-es>Prensa</span></a>
-  <a href="#instagram" onclick="toggleMenu()"><span data-en>Instagram</span><span data-es>Instagram</span></a>
-  <a href="reviews.html" onclick="toggleMenu()"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
-  <div class="mobile-lang">
-    <button class="lang-btn" id="mbtn-en" onclick="setLang('en');toggleMenu()">EN</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" id="mbtn-es" onclick="setLang('es');toggleMenu()">ES</button>
+  <a href="#" class="mobile-menu-logo">Luxury & Blush</a>
+  <div class="mobile-menu-links">
+    <a href="#concept" onclick="toggleMenu()"><span data-en>The Concept</span><span data-es>El Concepto</span></a>
+    <a href="#sets" onclick="toggleMenu()"><span data-en>Epic Sets</span><span data-es>Escenarios</span></a>
+    <a href="#archive" onclick="toggleMenu()"><span data-en>The Archive</span><span data-es>El Archivo</span></a>
+    <a href="#casting" onclick="toggleMenu()"><span data-en>The Casting</span><span data-es>El Casting</span></a>
+    <a href="reviews.html" onclick="toggleMenu()"><span data-en>Reviews</span><span data-es>Reseñas</span></a>
+  </div>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-lang">
+      <button class="lang-btn active" id="mbtn-en" onclick="setLang('en')">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" id="mbtn-es" onclick="setLang('es')">ES</button>
+    </div>
+    <span class="mobile-menu-tag">Luxury Weddings</span>
   </div>
 </div>
 
@@ -879,7 +938,10 @@ section{padding:100px 24px;width:100%;box-sizing:border-box}
 window.addEventListener('scroll',()=>{
   document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)
 })
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('menuToggle').classList.toggle('open');
+}
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})
 },{threshold:0.08,rootMargin:'0px 0px -30px 0px'})
