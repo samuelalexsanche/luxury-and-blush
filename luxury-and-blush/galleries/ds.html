@@ -75,7 +75,7 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
       <img src="../images/galleries/ds/DSC00122.webp" alt="Wedding photo">
     </div>
     <div class="photo-item" onclick="openLightbox(6)">
-      <img src="../images/galleries/ds/_DSC6050.webp" alt="Wedding photo">
+      <img src="../images/galleries/ds/DSC6050.webp" alt="Wedding photo">
     </div>
   </div>
   <div class="masonry-col">
@@ -102,7 +102,7 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
   <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
 <script>
-const photos=["../images/galleries/ds/DSC00047.webp","../images/galleries/ds/DSC00122.webp","../images/galleries/ds/DSC00568.webp","../images/galleries/ds/DSC00611.webp","../images/galleries/ds/DSC00656.webp","../images/galleries/ds/DSC09818.webp","../images/galleries/ds/_DSC6050.webp"];
+const photos=["../images/galleries/ds/DSC00047.webp","../images/galleries/ds/DSC00122.webp","../images/galleries/ds/DSC00568.webp","../images/galleries/ds/DSC00611.webp","../images/galleries/ds/DSC00656.webp","../images/galleries/ds/DSC09818.webp","../images/galleries/ds/DSC6050.webp"];
 let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
