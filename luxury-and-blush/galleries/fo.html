@@ -21,24 +21,18 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-x:hidden}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
 .nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--dark);text-decoration:none;font-weight:500}
 .nav-back{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.3s}
 .nav-back:hover{color:var(--gold)}
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0}
-
-/* HEADER */
-.gallery-header{padding:160px 80px 60px;background:var(--cream)}
+.gallery-header{padding:160px 80px 60px}
 .gallery-tag{font-family:var(--sans);font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
 .gallery-tag-line{width:48px;height:1px;background:var(--gold);margin-bottom:40px}
 .gallery-title{font-family:var(--serif);font-size:clamp(56px,9vw,104px);font-weight:300;line-height:1;color:var(--dark);margin-bottom:20px}
 .gallery-title em{font-style:italic;color:var(--gold-light)}
 .gallery-meta{font-family:var(--sans);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:300}
-.gallery-divider{height:1px;background:var(--blush);margin:48px 80px 48px}
-
-/* MASONRY GRID — flexbox columns, no gaps */
+.gallery-divider{height:1px;background:var(--blush);margin:48px 80px}
 .photo-grid{display:flex;gap:8px;padding:0 80px 120px;align-items:flex-start}
 .masonry-col{flex:1;display:flex;flex-direction:column;gap:8px}
 .photo-item{overflow:hidden;cursor:pointer;position:relative}
@@ -46,41 +40,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:fl
 .photo-item:hover img{transform:scale(1.04)}
 .photo-item::after{content:'';position:absolute;inset:0;background:rgba(26,26,26,0);transition:background 0.4s}
 .photo-item:hover::after{background:rgba(26,26,26,0.06)}
-
-/* LIGHTBOX */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(8,8,8,0.96);justify-content:center;align-items:center}
 .lightbox.open{display:flex}
 .lightbox-img{max-width:88vw;max-height:88vh;object-fit:contain;user-select:none;width:auto;height:auto}
 .lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:40px;cursor:pointer;line-height:1;transition:color 0.2s;font-family:var(--serif)}
 .lb-close:hover{color:#fff}
 .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:32px;cursor:pointer;padding:16px 20px;transition:all 0.2s;font-family:var(--serif);line-height:1}
-.lb-prev{left:16px}
-.lb-next{right:16px}
+.lb-prev{left:16px}.lb-next{right:16px}
 .lb-prev:hover,.lb-next:hover{background:rgba(255,255,255,0.1);color:#fff}
 .lb-counter{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-family:var(--sans);font-size:10px;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase}
-
-/* FOOTER */
 footer{background:var(--dark);padding:60px 80px;text-align:center}
 .footer-logo{font-family:var(--serif);font-size:14px;letter-spacing:6px;text-transform:uppercase;color:var(--cream);margin-bottom:16px;font-weight:500}
 .footer-copy{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-.photo-grid{gap:6px;padding:0 40px 80px}
-.masonry-col{gap:6px}
-.gallery-divider{margin:40px 40px 40px}
-}
-@media(max-width:600px){
-nav{padding:16px 24px}
-.gallery-header{padding:120px 24px 48px}
-.photo-grid{flex-direction:column;padding:0 24px 60px}
-.gallery-divider{margin:32px 24px 32px}
-footer{padding:40px 24px}
-}
+@media(max-width:900px){.photo-grid{gap:6px;padding:0 40px 80px}.masonry-col{gap:6px}.gallery-divider{margin:40px 40px}}
+@media(max-width:600px){nav{padding:16px 24px}.gallery-header{padding:120px 24px 48px}.photo-grid{flex-direction:column;padding:0 24px 60px}.gallery-divider{margin:32px 24px}footer{padding:40px 24px}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="../index.html" class="nav-logo">Luxury & Blush</a>
   <a href="../index.html#archive" class="nav-back">
@@ -88,16 +64,13 @@ footer{padding:40px 24px}
     The Archive
   </a>
 </nav>
-
 <div class="gallery-header">
   <div class="gallery-tag">The Archive</div>
   <div class="gallery-tag-line"></div>
   <h1 class="gallery-title">F & <em>O</em></h1>
   <div class="gallery-meta">México &nbsp;&middot;&nbsp; 2018</div>
 </div>
-
 <div class="gallery-divider"></div>
-
 <div class="photo-grid">
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(0)">
@@ -111,20 +84,19 @@ footer{padding:40px 24px}
     <div class="photo-item" onclick="openLightbox(1)">
       <img src="../images/galleries/fo/Fernanda y Oscar_0122.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(4)">
-      <img src="../images/galleries/fo/Fernanda y Oscar_0297.webp" alt="Wedding photo">
+    <div class="photo-item" onclick="openLightbox(5)">
+      <img src="../images/galleries/fo/Fernanda y Oscar_0383.webp" alt="Wedding photo">
     </div>
   </div>
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(2)">
       <img src="../images/galleries/fo/Fernanda y Oscar_0182.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(5)">
-      <img src="../images/galleries/fo/Fernanda y Oscar_0383.webp" alt="Wedding photo">
+    <div class="photo-item" onclick="openLightbox(4)">
+      <img src="../images/galleries/fo/Fernanda y Oscar_0297.webp" alt="Wedding photo">
     </div>
   </div>
 </div>
-
 <div class="lightbox" id="lightbox">
   <button class="lb-close" onclick="closeLB()">&times;</button>
   <button class="lb-prev" onclick="shiftLB(-1)">&#8249;</button>
@@ -132,37 +104,18 @@ footer{padding:40px 24px}
   <img class="lightbox-img" id="lbImg" src="" alt="">
   <div class="lb-counter" id="lbCounter"></div>
 </div>
-
 <footer>
   <div class="footer-logo">Luxury & Blush</div>
   <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
-
 <script>
 const photos = ["../images/galleries/fo/Fernanda y Oscar_0012.webp","../images/galleries/fo/Fernanda y Oscar_0122.webp","../images/galleries/fo/Fernanda y Oscar_0182.webp","../images/galleries/fo/Fernanda y Oscar_0219.webp","../images/galleries/fo/Fernanda y Oscar_0297.webp","../images/galleries/fo/Fernanda y Oscar_0383.webp"];
 let cur = 0;
-function openLightbox(i) {
-  cur = i;
-  document.getElementById('lbImg').src = photos[cur];
-  document.getElementById('lbCounter').textContent = (cur+1) + ' / ' + photos.length;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLB() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function shiftLB(dir) {
-  cur = (cur + dir + photos.length) % photos.length;
-  document.getElementById('lbImg').src = photos[cur];
-  document.getElementById('lbCounter').textContent = (cur+1) + ' / ' + photos.length;
-}
-document.getElementById('lightbox').addEventListener('click', function(e) { if(e.target===this) closeLB(); });
-document.addEventListener('keydown', function(e) {
-  if(e.key==='Escape') closeLB();
-  if(e.key==='ArrowLeft') shiftLB(-1);
-  if(e.key==='ArrowRight') shiftLB(1);
-});
+function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+function shiftLB(dir){cur=(cur+dir+photos.length)%photos.length;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLB();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')shiftLB(-1);if(e.key==='ArrowRight')shiftLB(1);});
 </script>
 </body>
 </html>
