@@ -226,13 +226,18 @@ section{padding:140px 80px}
 #archive{background:var(--cream);padding:140px 80px}
 .archive-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-bottom:60px}
 .archive-header .section-title{font-size:clamp(44px,6vw,78px);margin-bottom:0}
-.archive-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.archive-item{overflow:hidden}
-.archive-item:nth-child(1){grid-column:span 2;aspect-ratio:21/9}
-.archive-item:nth-child(2){aspect-ratio:4/3}
-.archive-item:nth-child(3){aspect-ratio:4/3}
-.archive-item img{transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
-.archive-item:hover img{transform:scale(1.04)}
+.galleries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4;display:block;text-decoration:none}
+.gallery-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.gallery-card:hover img{transform:scale(1.06)}
+.gallery-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,0.75) 0%,rgba(10,10,10,0.1) 50%,transparent 100%);transition:background 0.4s}
+.gallery-card:hover .gallery-card-overlay{background:linear-gradient(0deg,rgba(10,10,10,0.85) 0%,rgba(10,10,10,0.25) 60%,rgba(10,10,10,0.05) 100%)}
+.gallery-card-info{position:absolute;bottom:0;left:0;right:0;padding:28px 24px}
+.gallery-card-name{font-family:var(--serif);font-size:28px;font-weight:300;color:#fff;line-height:1.1;margin-bottom:6px}
+.gallery-card-name em{font-style:italic;color:var(--gold-light)}
+.gallery-card-meta{font-family:var(--sans);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:300}
+.gallery-card-cta{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) translateY(8px);opacity:0;transition:all 0.35s;font-family:var(--sans);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff;border:1px solid rgba(255,255,255,0.5);padding:12px 24px;white-space:nowrap}
+.gallery-card:hover .gallery-card-cta{opacity:1;transform:translate(-50%,-50%) translateY(0)}
 
 /* FOOTER */
 footer{background:var(--dark);padding:60px 80px;text-align:center}
@@ -292,7 +297,7 @@ section{padding:100px 24px}
 .scenery-split{grid-template-columns:1fr}
 .archive-grid{grid-template-columns:1fr}
 .archive-header{grid-template-columns:1fr}
-.archive-item:nth-child(1){grid-column:span 1}
+.galleries-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
@@ -702,10 +707,68 @@ section{padding:100px 24px}
     <span data-es>Un recorrido por nuestros estrenos convertidos en bodas. Atemporales, vanguardistas y profundamente estéticos — escenas que siguen respirando mucho después de ese momento singular.</span>
   </p>
 </div>
-<div class="archive-grid">
-  <div class="archive-item reveal"><img src="images/archive1.png" alt="Cultural wedding celebration"></div>
-  <div class="archive-item reveal reveal-d1"><img src="images/archive2.png" alt="Editorial beach wedding photo"></div>
-  <div class="archive-item reveal reveal-d2"><img src="images/archive3.png" alt="Stylish couple at bar"></div>
+<div class="galleries-grid">
+
+  <a href="galleries/bere-isaac.html" class="gallery-card reveal">
+    <img src="images/galleries/bere-isaac/BERE & ISAC 2-144.webp" alt="Bere & Isaac wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">Bere & <em>Isaac</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2018</div>
+    </div>
+  </a>
+
+  <a href="galleries/ds.html" class="gallery-card reveal reveal-d1">
+    <img src="images/galleries/ds/DSC09818.webp" alt="D & S wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">D & <em>S</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2025</div>
+    </div>
+  </a>
+
+  <a href="galleries/fo.html" class="gallery-card reveal reveal-d2">
+    <img src="images/galleries/fo/Fernanda y Oscar_0012.webp" alt="Fernanda & Oscar wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">Fernanda & <em>Oscar</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2018</div>
+    </div>
+  </a>
+
+  <a href="galleries/lm.html" class="gallery-card reveal reveal-d1">
+    <img src="images/galleries/lm/LM-001.webp" alt="L & M wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">L & <em>M</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2025</div>
+    </div>
+  </a>
+
+  <a href="galleries/ms.html" class="gallery-card reveal reveal-d2">
+    <img src="images/galleries/ms/M&S-81.webp" alt="M & S wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">M & <em>S</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2024</div>
+    </div>
+  </a>
+
+  <a href="galleries/se.html" class="gallery-card reveal reveal-d3">
+    <img src="images/galleries/se/S&E-62.webp" alt="S & E wedding">
+    <div class="gallery-card-overlay"></div>
+    <div class="gallery-card-cta">View Gallery</div>
+    <div class="gallery-card-info">
+      <div class="gallery-card-name">S & <em>E</em></div>
+      <div class="gallery-card-meta">México &nbsp;·&nbsp; 2023</div>
+    </div>
+  </a>
+
 </div>
 </section>
 
