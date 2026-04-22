@@ -8,17 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
---serif:'Cormorant Garamond',Georgia,serif;
---sans:'Montserrat',sans-serif;
---cream:#FAF8F5;
---blush:#E8DDD3;
---dark:#1a1a1a;
---text:#2c2c2c;
---muted:#4a4643;
---gold:#b8986e;
---gold-light:#d4bc96;
-}
+:root{--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',sans-serif;--cream:#FAF8F5;--blush:#E8DDD3;--dark:#1a1a1a;--text:#2c2c2c;--muted:#4a4643;--gold:#b8986e;--gold-light:#d4bc96;}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-x:hidden}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
@@ -109,8 +99,8 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
   <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
 <script>
-const photos = ["../images/galleries/fo/Fernanda y Oscar_0012.webp","../images/galleries/fo/Fernanda y Oscar_0122.webp","../images/galleries/fo/Fernanda y Oscar_0182.webp","../images/galleries/fo/Fernanda y Oscar_0219.webp","../images/galleries/fo/Fernanda y Oscar_0297.webp","../images/galleries/fo/Fernanda y Oscar_0383.webp"];
-let cur = 0;
+const photos=["../images/galleries/fo/Fernanda y Oscar_0012.webp","../images/galleries/fo/Fernanda y Oscar_0122.webp","../images/galleries/fo/Fernanda y Oscar_0182.webp","../images/galleries/fo/Fernanda y Oscar_0219.webp","../images/galleries/fo/Fernanda y Oscar_0297.webp","../images/galleries/fo/Fernanda y Oscar_0383.webp"];
+let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 function shiftLB(dir){cur=(cur+dir+photos.length)%photos.length;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;}
