@@ -12,7 +12,6 @@
 --serif:'Cormorant Garamond',Georgia,serif;
 --sans:'Montserrat',sans-serif;
 --cream:#FAF8F5;
---warm:#F3EDE7;
 --blush:#E8DDD3;
 --dark:#1a1a1a;
 --text:#2c2c2c;
@@ -22,7 +21,6 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--text);background:var(--cream);overflow-x:hidden}
-img{display:block;width:100%;object-fit:cover}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06)}
@@ -32,33 +30,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:fl
 .nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0}
 
 /* HEADER */
-.gallery-header{padding:160px 80px 80px;background:var(--cream)}
+.gallery-header{padding:160px 80px 60px;background:var(--cream)}
 .gallery-tag{font-family:var(--sans);font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:500}
 .gallery-tag-line{width:48px;height:1px;background:var(--gold);margin-bottom:40px}
 .gallery-title{font-family:var(--serif);font-size:clamp(56px,9vw,104px);font-weight:300;line-height:1;color:var(--dark);margin-bottom:20px}
 .gallery-title em{font-style:italic;color:var(--gold-light)}
 .gallery-meta{font-family:var(--sans);font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:300}
+.gallery-divider{height:1px;background:var(--blush);margin:48px 80px 48px}
 
-/* DIVIDER */
-.gallery-divider{height:1px;background:var(--blush);margin:0 80px 60px}
-
-/* PHOTO GRID — masonry via columns */
-.photo-grid{columns:3;column-gap:8px;padding:0 80px 120px}
-.photo-item{break-inside:avoid;margin-bottom:8px;overflow:hidden;cursor:pointer;position:relative}
+/* MASONRY GRID — flexbox columns, no gaps */
+.photo-grid{display:flex;gap:8px;padding:0 80px 120px;align-items:flex-start}
+.masonry-col{flex:1;display:flex;flex-direction:column;gap:8px}
+.photo-item{overflow:hidden;cursor:pointer;position:relative}
 .photo-item img{width:100%;height:auto;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)}
 .photo-item:hover img{transform:scale(1.04)}
 .photo-item::after{content:'';position:absolute;inset:0;background:rgba(26,26,26,0);transition:background 0.4s}
 .photo-item:hover::after{background:rgba(26,26,26,0.06)}
 
-/* VIEW ICON on hover */
-.photo-item .zoom-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.8);opacity:0;transition:all 0.3s;z-index:2;width:44px;height:44px;border:1px solid rgba(255,255,255,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.photo-item:hover .zoom-icon{opacity:1;transform:translate(-50%,-50%) scale(1)}
-.zoom-icon svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.5}
-
 /* LIGHTBOX */
 .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(8,8,8,0.96);justify-content:center;align-items:center}
 .lightbox.open{display:flex}
-.lightbox-img{max-width:88vw;max-height:88vh;object-fit:contain;user-select:none;width:auto}
+.lightbox-img{max-width:88vw;max-height:88vh;object-fit:contain;user-select:none;width:auto;height:auto}
 .lb-close{position:absolute;top:20px;right:28px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:40px;cursor:pointer;line-height:1;transition:color 0.2s;font-family:var(--serif)}
 .lb-close:hover{color:#fff}
 .lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);font-size:32px;cursor:pointer;padding:16px 20px;transition:all 0.2s;font-family:var(--serif);line-height:1}
@@ -74,15 +66,15 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-.photo-grid{columns:2;column-gap:6px;padding:0 40px 80px}
-.photo-item{margin-bottom:6px}
-.gallery-divider{margin:0 40px 40px}
+.photo-grid{gap:6px;padding:0 40px 80px}
+.masonry-col{gap:6px}
+.gallery-divider{margin:40px 40px 40px}
 }
 @media(max-width:600px){
 nav{padding:16px 24px}
 .gallery-header{padding:120px 24px 48px}
-.photo-grid{columns:1;padding:0 24px 60px}
-.gallery-divider{margin:0 24px 32px}
+.photo-grid{flex-direction:column;padding:0 24px 60px}
+.gallery-divider{margin:32px 24px 32px}
 footer{padding:40px 24px}
 }
 </style>
@@ -107,23 +99,29 @@ footer{padding:40px 24px}
 <div class="gallery-divider"></div>
 
 <div class="photo-grid">
-  <div class="photo-item" onclick="openLightbox(0)">
-    <img src="../images/galleries/se/S&E-12.webp" alt="S & E wedding photo" loading="lazy">
+  <div class="masonry-col">
+    <div class="photo-item" onclick="openLightbox(0)">
+      <img src="../images/galleries/se/S&E-12.webp" alt="Wedding photo" loading="lazy">
+    </div>
+    <div class="photo-item" onclick="openLightbox(3)">
+      <img src="../images/galleries/se/S&E-25.webp" alt="Wedding photo" loading="lazy">
+    </div>
   </div>
-  <div class="photo-item" onclick="openLightbox(1)">
-    <img src="../images/galleries/se/S&E-13.webp" alt="S & E wedding photo" loading="lazy">
+  <div class="masonry-col">
+    <div class="photo-item" onclick="openLightbox(1)">
+      <img src="../images/galleries/se/S&E-13.webp" alt="Wedding photo" loading="lazy">
+    </div>
+    <div class="photo-item" onclick="openLightbox(4)">
+      <img src="../images/galleries/se/S&E-62.webp" alt="Wedding photo" loading="lazy">
+    </div>
   </div>
-  <div class="photo-item" onclick="openLightbox(2)">
-    <img src="../images/galleries/se/S&E-18.webp" alt="S & E wedding photo" loading="lazy">
-  </div>
-  <div class="photo-item" onclick="openLightbox(3)">
-    <img src="../images/galleries/se/S&E-25.webp" alt="S & E wedding photo" loading="lazy">
-  </div>
-  <div class="photo-item" onclick="openLightbox(4)">
-    <img src="../images/galleries/se/S&E-62.webp" alt="S & E wedding photo" loading="lazy">
-  </div>
-  <div class="photo-item" onclick="openLightbox(5)">
-    <img src="../images/galleries/se/S&E_-2.webp" alt="S & E wedding photo" loading="lazy">
+  <div class="masonry-col">
+    <div class="photo-item" onclick="openLightbox(2)">
+      <img src="../images/galleries/se/S&E-18.webp" alt="Wedding photo" loading="lazy">
+    </div>
+    <div class="photo-item" onclick="openLightbox(5)">
+      <img src="../images/galleries/se/S&E_-2.webp" alt="Wedding photo" loading="lazy">
+    </div>
   </div>
 </div>
 
