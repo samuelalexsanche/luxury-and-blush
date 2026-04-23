@@ -133,9 +133,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 52px;display:fl
 /* BODAS BADGE */
 .badges-section{padding:0 80px 100px;text-align:center}
 .badges-label{font-family:var(--sans);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:36px;font-weight:400}
-.badges-row{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
-#wp-ratedWA a img{opacity:0.85;transition:opacity 0.3s;filter:grayscale(10%)}
-#wp-ratedWA a:hover img{opacity:1;filter:grayscale(0%)}
+.badges-row{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap}
+.badges-row a img,.badges-row>img{opacity:0.85;transition:opacity 0.3s}
+.badges-row a:hover img,.badges-row>img:hover{opacity:1}
 
 /* DIVIDER */
 .section-divider{display:flex;align-items:center;gap:24px;max-width:700px;margin:0 auto 90px;padding:0 80px}
@@ -243,15 +243,13 @@ footer{padding:40px 24px}
 <!-- BODAS BADGE -->
 <div class="badges-section reveal">
   <p class="badges-label"><span data-en>Official Recognition</span><span data-es>Reconocimiento Oficial</span></p>
-  <div class="badges-row">
-    <div id="wp-ratedWA">
-      <a target="_blank" href="https://www.bodas.com.mx/wedding-planner/luxury-and-blush-events--e136344" rel="nofollow" title="Luxury and Blush Events, ganador Wedding Awards 2015 Bodas.com.mx">
-        <img width="125" height="125" alt="Luxury and Blush Events, ganador Wedding Awards 2015 Bodas.com.mx" id="wp-ratedWA-img-2015" src="https://cdn1.bodas.com.mx/img/badges/2015/badge-weddingawards_es_MX.jpg">
-      </a>
-      <a target="_blank" href="https://www.bodas.com.mx/wedding-planner/luxury-and-blush-events--e136344" rel="nofollow" title="Luxury and Blush Events, ganador Wedding Awards 2021 Bodas.com.mx">
-        <img width="125" height="125" alt="Luxury and Blush Events, ganador Wedding Awards 2021 Bodas.com.mx" id="wp-ratedWA-img-2021" src="https://cdn1.bodas.com.mx/img/badges/2021/badge-weddingawards_es_MX.jpg">
-      </a>
-    </div>
+  <div class="badges-row" id="wp-ratedWA">
+    <a target="_blank" href="https://www.bodas.com.mx/wedding-planner/luxury-and-blush-events--e136344" rel="nofollow" title="Luxury and Blush Events, ganador Wedding Awards 2015 Bodas.com.mx">
+      <img width="125" height="125" alt="Luxury and Blush Events, ganador Wedding Awards 2015 Bodas.com.mx" id="wp-ratedWA-img-2015" src="https://cdn1.bodas.com.mx/img/badges/2015/badge-weddingawards_es_MX.jpg">
+    </a>
+    <a target="_blank" href="https://www.bodas.com.mx/wedding-planner/luxury-and-blush-events--e136344" rel="nofollow" title="Luxury and Blush Events, ganador Wedding Awards 2021 Bodas.com.mx">
+      <img width="125" height="125" alt="Luxury and Blush Events, ganador Wedding Awards 2021 Bodas.com.mx" id="wp-ratedWA-img-2021" src="https://cdn1.bodas.com.mx/img/badges/2021/badge-weddingawards_es_MX.jpg">
+    </a>
     <img src="images/recomendado.png" alt="Premio Recomendado" width="125" height="125" style="opacity:0.85;transition:opacity 0.3s" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
   </div>
 </div>
