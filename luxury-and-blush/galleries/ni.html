@@ -71,6 +71,9 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
     <div class="photo-item" onclick="openLightbox(7)">
       <img src="../images/galleries/ni/ni-08.webp" alt="Wedding photo">
     </div>
+    <div class="photo-item" onclick="openLightbox(9)">
+      <img src="../images/galleries/ni/ni-10.webp" alt="Wedding photo">
+    </div>
   </div>
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(1)">
@@ -78,6 +81,9 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
     </div>
     <div class="photo-item" onclick="openLightbox(5)">
       <img src="../images/galleries/ni/ni-06.webp" alt="Wedding photo">
+    </div>
+    <div class="photo-item" onclick="openLightbox(10)">
+      <img src="../images/galleries/ni/ni-11.webp" alt="Wedding photo">
     </div>
   </div>
   <div class="masonry-col">
@@ -92,6 +98,9 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
     </div>
     <div class="photo-item" onclick="openLightbox(8)">
       <img src="../images/galleries/ni/ni-09.webp" alt="Wedding photo">
+    </div>
+    <div class="photo-item" onclick="openLightbox(11)">
+      <img src="../images/galleries/ni/ni-12.webp" alt="Wedding photo">
     </div>
   </div>
 </div>
@@ -116,7 +125,10 @@ const photos=[
   "../images/galleries/ni/ni-06.webp",
   "../images/galleries/ni/ni-07.webp",
   "../images/galleries/ni/ni-08.webp",
-  "../images/galleries/ni/ni-09.webp"
+  "../images/galleries/ni/ni-09.webp",
+  "../images/galleries/ni/ni-10.webp",
+  "../images/galleries/ni/ni-11.webp",
+  "../images/galleries/ni/ni-12.webp"
 ];
 let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
