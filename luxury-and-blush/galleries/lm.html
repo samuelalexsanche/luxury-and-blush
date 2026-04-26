@@ -72,6 +72,9 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
     <div class="photo-item" onclick="openLightbox(7)">
       <img src="../images/galleries/lm/LM-524.webp" alt="Wedding photo">
     </div>
+    <div class="photo-item" onclick="openLightbox(9)">
+      <img src="../images/galleries/lm/495803392_18463066651075569_2280724379034846107_n.webp" alt="Wedding photo">
+    </div>
   </div>
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(1)">
@@ -108,7 +111,7 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
   <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
 <script>
-const photos=["../images/galleries/lm/515352746_24131081513190456_1729295516724388984_n.webp","../images/galleries/lm/515588585_24131081519857122_140680210817077619_n.webp","../images/galleries/lm/LM-001.webp","../images/galleries/lm/LM-147.webp","../images/galleries/lm/LM-193.webp","../images/galleries/lm/LM-500.webp","../images/galleries/lm/LM-521.webp","../images/galleries/lm/LM-524.webp","../images/galleries/lm/LM-534.webp"];
+const photos=["../images/galleries/lm/515352746_24131081513190456_1729295516724388984_n.webp","../images/galleries/lm/515588585_24131081519857122_140680210817077619_n.webp","../images/galleries/lm/LM-001.webp","../images/galleries/lm/LM-147.webp","../images/galleries/lm/LM-193.webp","../images/galleries/lm/LM-500.webp","../images/galleries/lm/LM-521.webp","../images/galleries/lm/LM-524.webp","../images/galleries/lm/LM-534.webp","../images/galleries/lm/495803392_18463066651075569_2280724379034846107_n.webp"];
 let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
