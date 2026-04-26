@@ -64,53 +64,44 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
 <div class="photo-grid">
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(0)">
-      <img src="../images/galleries/sn/DSC00047.webp" alt="Wedding photo">
+      <img src="../images/galleries/sn/FXTA1488.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(5)">
-      <img src="../images/galleries/sn/FXTA1586.webp" alt="Wedding photo">
+    <div class="photo-item" onclick="openLightbox(4)">
+      <img src="../images/galleries/sn/FXTA4271.webp" alt="Wedding photo">
     </div>
     <div class="photo-item" onclick="openLightbox(8)">
-      <img src="../images/galleries/sn/FXTB0014.webp" alt="Wedding photo">
-    </div>
-    <div class="photo-item" onclick="openLightbox(11)">
       <img src="../images/galleries/sn/FXTB1438.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(14)">
+    <div class="photo-item" onclick="openLightbox(11)">
       <img src="../images/galleries/sn/FXTB9957.webp" alt="Wedding photo">
     </div>
   </div>
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(1)">
-      <img src="../images/galleries/sn/FXTA1488.webp" alt="Wedding photo">
+      <img src="../images/galleries/sn/FXTA1495.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(4)">
-      <img src="../images/galleries/sn/FXTA1497.webp" alt="Wedding photo">
-    </div>
-    <div class="photo-item" onclick="openLightbox(7)">
-      <img src="../images/galleries/sn/FXTA4271.webp" alt="Wedding photo">
+    <div class="photo-item" onclick="openLightbox(5)">
+      <img src="../images/galleries/sn/FXTB0014.webp" alt="Wedding photo">
     </div>
     <div class="photo-item" onclick="openLightbox(9)">
-      <img src="../images/galleries/sn/FXTB0289.webp" alt="Wedding photo">
-    </div>
-    <div class="photo-item" onclick="openLightbox(13)">
-      <img src="../images/galleries/sn/FXTB1464.webp" alt="Wedding photo">
+      <img src="../images/galleries/sn/FXTB1455.webp" alt="Wedding photo">
     </div>
   </div>
   <div class="masonry-col">
     <div class="photo-item" onclick="openLightbox(2)">
-      <img src="../images/galleries/sn/FXTA1490.webp" alt="Wedding photo">
+      <img src="../images/galleries/sn/FXTA1586.webp" alt="Wedding photo">
     </div>
     <div class="photo-item" onclick="openLightbox(3)">
-      <img src="../images/galleries/sn/FXTA1495.webp" alt="Wedding photo">
-    </div>
-    <div class="photo-item" onclick="openLightbox(6)">
       <img src="../images/galleries/sn/FXTA2798.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(10)">
+    <div class="photo-item" onclick="openLightbox(6)">
+      <img src="../images/galleries/sn/FXTB0289.webp" alt="Wedding photo">
+    </div>
+    <div class="photo-item" onclick="openLightbox(7)">
       <img src="../images/galleries/sn/FXTB1410.webp" alt="Wedding photo">
     </div>
-    <div class="photo-item" onclick="openLightbox(12)">
-      <img src="../images/galleries/sn/FXTB1455.webp" alt="Wedding photo">
+    <div class="photo-item" onclick="openLightbox(10)">
+      <img src="../images/galleries/sn/FXTB1464.webp" alt="Wedding photo">
     </div>
   </div>
 </div>
@@ -126,7 +117,7 @@ footer{background:var(--dark);padding:60px 80px;text-align:center}
   <div class="footer-copy">&copy; 2026 Luxury and Blush Events. All rights reserved.</div>
 </footer>
 <script>
-const photos=["../images/galleries/sn/DSC00047.webp","../images/galleries/sn/FXTA1488.webp","../images/galleries/sn/FXTA1490.webp","../images/galleries/sn/FXTA1495.webp","../images/galleries/sn/FXTA1497.webp","../images/galleries/sn/FXTA1586.webp","../images/galleries/sn/FXTA2798.webp","../images/galleries/sn/FXTA4271.webp","../images/galleries/sn/FXTB0014.webp","../images/galleries/sn/FXTB0289.webp","../images/galleries/sn/FXTB1410.webp","../images/galleries/sn/FXTB1438.webp","../images/galleries/sn/FXTB1455.webp","../images/galleries/sn/FXTB1464.webp","../images/galleries/sn/FXTB9957.webp"];
+const photos=["../images/galleries/sn/FXTA1488.webp","../images/galleries/sn/FXTA1495.webp","../images/galleries/sn/FXTA1586.webp","../images/galleries/sn/FXTA2798.webp","../images/galleries/sn/FXTA4271.webp","../images/galleries/sn/FXTB0014.webp","../images/galleries/sn/FXTB0289.webp","../images/galleries/sn/FXTB1410.webp","../images/galleries/sn/FXTB1438.webp","../images/galleries/sn/FXTB1455.webp","../images/galleries/sn/FXTB1464.webp","../images/galleries/sn/FXTB9957.webp"];
 let cur=0;
 function openLightbox(i){cur=i;document.getElementById('lbImg').src=photos[cur];document.getElementById('lbCounter').textContent=(cur+1)+' / '+photos.length;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
 function closeLB(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
