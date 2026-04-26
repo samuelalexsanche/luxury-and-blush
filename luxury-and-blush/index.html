@@ -130,6 +130,7 @@ nav.scrolled .menu-toggle.open span{background:var(--dark)}
 .hero{height:100vh;position:relative;overflow:hidden;background:var(--dark)}
 .hero-img{position:absolute;inset:0}
 .hero-img img{object-position:top center}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(26,26,26,0.6) 0%,rgba(26,26,26,0.2) 45%,rgba(26,26,26,0.1) 100%)}
 .hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 60px 90px;z-index:2}
 .hero-tag{font-family:var(--sans);font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--white);margin-bottom:24px;font-weight:500}
@@ -411,7 +412,12 @@ section{padding:100px 24px;width:100%;box-sizing:border-box}
 
 <!-- HERO -->
 <section class="hero">
-<div class="hero-img"><img src="images/hero-couple.png" alt="Luxury destination wedding in Mexico"></div>
+<div class="hero-img">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/hero-couple.png">
+    <source src="images/LBhero.mp4" type="video/mp4">
+    <img src="images/hero-couple.png" alt="Luxury destination wedding in Mexico">
+  </video>
+</div>
 <div class="hero-overlay"></div>
 <div class="hero-content">
   <div class="hero-tag">
