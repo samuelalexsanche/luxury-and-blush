@@ -41,7 +41,8 @@ body:not(.lang-es) [data-en]{display:inline}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 52px;display:flex;justify-content:space-between;align-items:center;transition:all 0.5s}
 nav.scrolled{background:rgba(250,248,245,0.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(0,0,0,0.06);padding:16px 52px}
-.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--white);text-decoration:none;font-weight:500;transition:color 0.5s}
+.nav-logo{font-family:var(--serif);font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--white);text-decoration:none;font-weight:500;transition:color 0.5s;display:flex;align-items:center;gap:8px}
+.nav-logo img{height:28px;width:auto}
 nav.scrolled .nav-logo{color:var(--dark)}
 .nav-links{display:flex;gap:18px;align-items:center}
 .nav-links a{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.9);text-decoration:none;transition:color 0.3s;font-weight:500;position:relative}
@@ -381,7 +382,7 @@ footer{padding:40px 24px}
 <body>
 
 <nav id="navbar">
-<a href="#" class="nav-logo">Luxury & Blush</a>
+<a href="#" class="nav-logo"><img src="images/logos/logo-lb.png" alt="Luxury & Blush">Luxury & Blush</a>
 <div class="nav-links">
   <a href="#concept"><span data-en>The Concept</span><span data-es>El Concepto</span></a>
   <a href="#sets"><span data-en>Epic Sets</span><span data-es>Escenarios</span></a>
@@ -981,7 +982,7 @@ footer{padding:40px 24px}
 
 <!-- IG profile header -->
 <a href="https://www.instagram.com/luxury.and.blush" target="_blank" rel="noopener" class="ig-profile reveal" style="text-decoration:none;color:inherit">
-  <div class="ig-avatar"><div class="ig-avatar-inner"><img src="images/logos/luxury-blush-logo.png" alt="Luxury & Blush logo" style="width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box"></div></div>
+  <div class="ig-avatar"><div class="ig-avatar-inner"><img src="images/logos/logo-lb.png" alt="Luxury & Blush logo" style="width:100%;height:100%;object-fit:contain;padding:8px;box-sizing:border-box"></div></div>
   <div class="ig-profile-info">
     <div class="ig-username">luxury.and.blush</div>
     <div class="ig-profile-stats">
