@@ -1,6 +1,7 @@
 # Only track the Luxury and Blush project
 /*
 !/.gitignore
+!/CNAME
 !/index.html
 !/luxury-and-blush/
 !/luxury-and-blush/**
